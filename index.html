@@ -22,10 +22,11 @@ overflow: hidden;
 }
 
 body {
-position: relative;
 background: #000;
 color: #fff;
 }
+
+/* HERO */
 
 .hero {
 position: relative;
@@ -35,110 +36,127 @@ display: flex;
 align-items: center;
 justify-content: center;
 text-align: center;
-padding: 24px;
 overflow: hidden;
-background: #000;
 }
+
+/* BILD – FINAL FIX FÜR SAFARI + POSITION */
 
 .hero-image {
 position: absolute;
-inset: 0;
+top: 0;
+left: 0;
 width: 100%;
 height: 100%;
 object-fit: cover;
-object-position: center 92%;
+
+/* WICHTIG → zieht Bild deutlich nach unten */
+object-position: center 115%;
+
 z-index: 0;
 }
+
+/* DUNKLER OVERLAY */
 
 .hero::after {
 content: "";
 position: absolute;
 inset: 0;
-background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.72));
+background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.75));
 z-index: 1;
 }
+
+/* TEXT */
 
 .content {
 position: relative;
 z-index: 2;
 max-width: 700px;
-width: 100%;
-padding: 32px 24px;
-background: rgba(10, 10, 18, 0.28);
-backdrop-filter: blur(8px);
--webkit-backdrop-filter: blur(8px);
-border: 1px solid rgba(255,255,255,0.12);
-border-radius: 24px;
-box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+padding: 20px;
 }
 
+/* HEADLINE */
+
 h1 {
-font-size: clamp(40px, 8vw, 84px);
+font-size: clamp(42px, 8vw, 90px);
 line-height: 0.95;
 letter-spacing: 3px;
-margin-bottom: 18px;
+margin-bottom: 20px;
 font-weight: 700;
 text-transform: uppercase;
 }
 
+/* TEXT */
+
 p {
 font-size: clamp(16px, 2.2vw, 22px);
 line-height: 1.5;
-margin-bottom: 30px;
-color: rgba(255,255,255,0.92);
+margin-bottom: 35px;
+color: rgba(255,255,255,0.95);
 }
+
+/* BUTTON */
 
 .button {
 display: inline-block;
-padding: 16px 30px;
+padding: 16px 32px;
 border-radius: 14px;
 text-decoration: none;
 font-size: 16px;
 font-weight: 700;
-letter-spacing: 0.3px;
 color: #fff;
 background: linear-gradient(90deg, #ff1fbf, #8b5cf6);
-box-shadow: 0 10px 30px rgba(255, 31, 191, 0.28);
-transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+box-shadow: 0 12px 35px rgba(255, 31, 191, 0.35);
+transition: all 0.25s ease;
 }
 
 .button:hover {
-transform: translateY(-2px);
-box-shadow: 0 14px 34px rgba(255, 31, 191, 0.36);
-opacity: 0.98;
+transform: translateY(-3px) scale(1.02);
+box-shadow: 0 18px 45px rgba(255, 31, 191, 0.45);
 }
 
+/* MOBILE */
+
 @media (max-width: 640px) {
-.content {
-padding: 26px 18px;
-border-radius: 20px;
+
+.hero-image {
+object-position: center 120%;
+}
+
+h1 {
+font-size: 42px;
 }
 
 p {
-margin-bottom: 24px;
+font-size: 16px;
 }
+
 }
 </style>
 </head>
 
 <body>
+
 <section class="hero">
 
 <img src="Nova.jpg" alt="Nova" class="hero-image">
 
 <div class="content">
+
 <h1>YOU ARE NOVA</h1>
 
 <p>
 Coming Soon.<br>
-Folge jetzt auf Instagram und begleite den Start von Nova.
+Folge jetzt auf Instagram und<br>
+begleite den Start von Nova.
 </p>
 
-<a class="button" href="https://instagram.com/youarenova.ai" target="_blank" rel="noopener noreferrer">
+<a class="button" href="https://instagram.com/youarenova.ai" target="_blank">
 Jetzt auf Instagram folgen
 </a>
 
 </div>
+
 </section>
+
 </body>
 </html>
