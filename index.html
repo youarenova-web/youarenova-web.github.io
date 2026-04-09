@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nova – Coming soon</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg-dark: #05010a;
@@ -12,8 +17,8 @@
       --accent-2: rgba(255, 0, 170, 0.18);
       --accent-3: rgba(120, 0, 255, 0.16);
       --text: #ffffff;
-      --text-soft: rgba(255,255,255,0.82);
-      --line: rgba(255,255,255,0.12);
+      --text-soft: rgba(255, 255, 255, 0.84);
+      --line: rgba(255, 255, 255, 0.12);
     }
 
     * {
@@ -22,7 +27,8 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       width: 100%;
@@ -33,7 +39,7 @@
         radial-gradient(circle at 50% 80%, rgba(120, 0, 255, 0.10), transparent 36%),
         linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-dark) 100%);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       overflow-x: hidden;
     }
 
@@ -109,7 +115,13 @@
       position: absolute;
       border-radius: 50%;
       opacity: 0;
-      background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,0,200,0.5) 30%, rgba(140,0,255,0.08) 70%, transparent 100%);
+      background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 0, 200, 0.52) 30%,
+        rgba(140, 0, 255, 0.08) 70%,
+        transparent 100%
+      );
       box-shadow:
         0 0 10px rgba(255, 0, 200, 0.35),
         0 0 20px rgba(170, 0, 255, 0.18);
@@ -149,10 +161,10 @@
       min-height: 78vh;
       border-radius: 28px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow:
-        0 20px 60px rgba(0,0,0,0.45),
-        0 0 0 1px rgba(255,255,255,0.02) inset,
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(255, 255, 255, 0.02) inset,
         0 0 60px rgba(190, 0, 255, 0.10);
       background: #07020d;
       isolation: isolate;
@@ -207,9 +219,9 @@
       inset: 0;
       z-index: 1;
       background:
-        linear-gradient(180deg, rgba(5,1,10,0.10) 0%, rgba(5,1,10,0.22) 22%, rgba(5,1,10,0.48) 72%, rgba(5,1,10,0.74) 100%),
-        radial-gradient(circle at 70% 28%, rgba(255,0,170,0.10), transparent 28%),
-        radial-gradient(circle at 28% 18%, rgba(150,0,255,0.12), transparent 32%);
+        linear-gradient(180deg, rgba(5, 1, 10, 0.08) 0%, rgba(5, 1, 10, 0.18) 22%, rgba(5, 1, 10, 0.42) 72%, rgba(5, 1, 10, 0.70) 100%),
+        radial-gradient(circle at 70% 28%, rgba(255, 0, 170, 0.10), transparent 28%),
+        radial-gradient(circle at 28% 18%, rgba(150, 0, 255, 0.12), transparent 32%);
     }
 
     .shimmer {
@@ -219,7 +231,7 @@
       background: linear-gradient(
         115deg,
         transparent 35%,
-        rgba(255,255,255,0.04) 50%,
+        rgba(255, 255, 255, 0.04) 50%,
         transparent 65%
       );
       transform: translateX(-40%) rotate(0.001deg);
@@ -263,30 +275,62 @@
     .eyebrow {
       display: inline-block;
       font-size: 0.88rem;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.72);
+      color: rgba(255, 255, 255, 0.72);
       margin-bottom: 16px;
+      font-weight: 600;
+      text-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
     }
 
     h1 {
       margin: 0;
       font-size: clamp(3rem, 8vw, 6.8rem);
       line-height: 0.94;
-      letter-spacing: -0.04em;
-      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+      text-transform: uppercase;
       text-shadow:
-        0 10px 30px rgba(0,0,0,0.35),
-        0 0 24px rgba(185, 0, 255, 0.10);
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 14px rgba(190, 0, 255, 0.10),
+        0 0 26px rgba(255, 0, 170, 0.06);
+      animation: novaGlow 4.8s ease-in-out infinite;
+      transform-origin: left center;
+      will-change: text-shadow, opacity;
+    }
+
+    @keyframes novaGlow {
+      0% {
+        text-shadow:
+          0 10px 30px rgba(0, 0, 0, 0.35),
+          0 0 14px rgba(190, 0, 255, 0.10),
+          0 0 26px rgba(255, 0, 170, 0.06);
+        opacity: 0.98;
+      }
+      50% {
+        text-shadow:
+          0 10px 30px rgba(0, 0, 0, 0.35),
+          0 0 18px rgba(210, 0, 255, 0.18),
+          0 0 34px rgba(255, 0, 170, 0.10);
+        opacity: 1;
+      }
+      100% {
+        text-shadow:
+          0 10px 30px rgba(0, 0, 0, 0.35),
+          0 0 14px rgba(190, 0, 255, 0.10),
+          0 0 26px rgba(255, 0, 170, 0.06);
+        opacity: 0.98;
+      }
     }
 
     .coming {
       margin-top: 18px;
       font-size: clamp(1rem, 2vw, 1.2rem);
-      line-height: 1.5;
+      line-height: 1.6;
+      font-weight: 400;
       color: var(--text-soft);
       max-width: 520px;
-      text-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      text-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     }
 
     .coming .line-break-space {
@@ -303,34 +347,39 @@
 
     .btn {
       appearance: none;
-      border: 1px solid rgba(255,255,255,0.14);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 999px;
       padding: 14px 22px;
       color: #fff;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.98rem;
+      letter-spacing: 0.01em;
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, rgba(255, 0, 170, 0.20), rgba(145, 0, 255, 0.22));
       box-shadow:
         0 8px 30px rgba(173, 0, 255, 0.22),
-        inset 0 0 0 1px rgba(255,255,255,0.06);
+        inset 0 0 0 1px rgba(255, 255, 255, 0.06);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .btn:hover {
       transform: translateY(-1px);
-      border-color: rgba(255,255,255,0.28);
+      border-color: rgba(255, 255, 255, 0.28);
       box-shadow:
-        0 12px 34px rgba(0,0,0,0.20),
+        0 12px 34px rgba(0, 0, 0, 0.20),
         0 0 24px rgba(215, 0, 255, 0.10);
     }
 
@@ -344,9 +393,10 @@
       justify-content: space-between;
       gap: 12px;
       align-items: center;
-      color: rgba(255,255,255,0.54);
+      color: rgba(255, 255, 255, 0.54);
       font-size: 0.84rem;
       letter-spacing: 0.03em;
+      font-weight: 500;
     }
 
     .footer-note::before {
@@ -356,7 +406,7 @@
       right: 0;
       top: -12px;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.16), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
     }
 
     @media (max-width: 900px) {
@@ -468,12 +518,12 @@
   </main>
 
   <script>
-    const container = document.getElementById('particles');
+    const container = document.getElementById("particles");
     const particleCount = 26;
 
     for (let i = 0; i < particleCount; i++) {
-      const p = document.createElement('span');
-      p.className = 'particle';
+      const p = document.createElement("span");
+      p.className = "particle";
 
       const size = Math.random() * 5 + 2;
       const left = Math.random() * 100;
