@@ -4,190 +4,196 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nova — Coming Soon</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <meta name="description" content="Nova is coming soon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #040404;
+      --bg: #05020a;
       --text: #ffffff;
-      --muted: rgba(255,255,255,0.78);
-      --muted-soft: rgba(255,255,255,0.50);
-      --line: rgba(255,255,255,0.16);
-      --magenta: rgba(255, 0, 170, 0.24);
-      --violet: rgba(160, 80, 255, 0.20);
+      --muted: rgba(255,255,255,0.82);
+      --line: rgba(255,255,255,0.18);
+      --glass: rgba(255,255,255,0.08);
+      --shadow: rgba(0,0,0,0.45);
+      --violet: rgba(155, 92, 255, 0.28);
+      --pink: rgba(255, 66, 163, 0.22);
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     html, body {
+      margin: 0;
+      padding: 0;
       width: 100%;
-      height: 100%;
-      overflow: hidden;
+      min-height: 100%;
       background: var(--bg);
       color: var(--text);
       font-family: "Montserrat Alternates", sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      overflow: hidden;
     }
 
     body {
       position: relative;
-    }
-
-    .background {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      z-index: 0;
-      background:
-        radial-gradient(circle at 18% 22%, rgba(255, 0, 170, 0.12), transparent 36%),
-        radial-gradient(circle at 82% 28%, rgba(140, 70, 255, 0.10), transparent 34%),
-        radial-gradient(circle at 50% 82%, rgba(255,255,255,0.03), transparent 30%),
-        #040404;
-    }
-
-    .image-layer {
-      position: absolute;
-      inset: 0;
-      background-image: url("Nova-final-01.jpg");
-      background-size: cover;
-      background-position: center center;
-      opacity: 0.93;
-      transform: scale(1);
-      animation: slowZoom 20s ease-in-out infinite alternate;
-      filter: saturate(1.02) contrast(1.1) brightness(0.88);
-    }
-
-    .image-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.30), rgba(0,0,0,0.52)),
-        radial-gradient(circle at 50% 46%, rgba(255, 0, 170, 0.09), transparent 38%),
-        radial-gradient(circle at 50% 52%, rgba(140, 70, 255, 0.08), transparent 42%);
-      pointer-events: none;
-    }
-
-    .glow {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.62;
-      pointer-events: none;
-      mix-blend-mode: screen;
-      animation: floatGlow 11s ease-in-out infinite;
-    }
-
-    .glow.one {
-      width: 340px;
-      height: 340px;
-      left: 8%;
-      top: 10%;
-      background: rgba(255, 0, 170, 0.14);
-    }
-
-    .glow.two {
-      width: 400px;
-      height: 400px;
-      right: 6%;
-      top: 18%;
-      background: rgba(140, 70, 255, 0.13);
-      animation-delay: -3s;
-    }
-
-    .glow.three {
-      width: 280px;
-      height: 280px;
-      left: 50%;
-      bottom: 6%;
-      transform: translateX(-50%);
-      background: rgba(255, 0, 170, 0.10);
-      animation-delay: -6s;
-    }
-
-    canvas#particles {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      opacity: 0.52;
-    }
-
-    .page {
-      position: relative;
-      z-index: 2;
-      min-height: 100vh;
-      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 32px 20px;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 0, 128, 0.08), transparent 28%),
+        radial-gradient(circle at 80% 15%, rgba(120, 0, 255, 0.10), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(255, 0, 90, 0.10), transparent 35%),
+        #05020a;
+    }
+
+    .bg-image {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.42)),
+        url("Nova-final-01.jpg");
+      background-size: cover;
+      background-position: center 22%;
+      transform: scale(1.035);
+      filter: saturate(1.04) contrast(1.08) brightness(0.82);
+      animation: slowFloat 14s ease-in-out infinite alternate;
+    }
+
+    .bg-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 48%, rgba(255, 60, 170, 0.18), transparent 24%),
+        radial-gradient(circle at 52% 40%, rgba(155, 92, 255, 0.14), transparent 28%),
+        linear-gradient(to right, rgba(255, 0, 140, 0.08), transparent 35%, transparent 65%, rgba(120, 0, 255, 0.10));
+      mix-blend-mode: screen;
+      opacity: 0.92;
+      pointer-events: none;
+    }
+
+    .vignette {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at center, transparent 34%, rgba(0,0,0,0.20) 64%, rgba(0,0,0,0.60) 100%);
+      pointer-events: none;
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image:
+        radial-gradient(rgba(255,255,255,0.8) 0.45px, transparent 0.55px);
+      background-size: 6px 6px;
+      mix-blend-mode: soft-light;
+    }
+
+    .particles,
+    .particles::before,
+    .particles::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+    }
+
+    .particles {
+      background:
+        radial-gradient(circle, rgba(255, 128, 210, 0.22) 0 1.2px, transparent 1.8px),
+        radial-gradient(circle, rgba(180, 110, 255, 0.20) 0 1.1px, transparent 1.7px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.10) 0 1px, transparent 1.5px);
+      background-size: 210px 210px, 270px 270px, 180px 180px;
+      background-position: 0 0, 60px 40px, 110px 80px;
+      filter: blur(0.25px);
+      animation: driftOne 18s linear infinite;
+      opacity: 0.8;
+    }
+
+    .particles::before {
+      background:
+        radial-gradient(circle, rgba(255, 70, 170, 0.16) 0 1.2px, transparent 1.9px),
+        radial-gradient(circle, rgba(155, 92, 255, 0.16) 0 1.1px, transparent 1.8px);
+      background-size: 320px 320px, 260px 260px;
+      background-position: 20px 30px, 140px 120px;
+      animation: driftTwo 24s linear infinite reverse;
+      opacity: 0.7;
+    }
+
+    .particles::after {
+      background:
+        radial-gradient(circle, rgba(255,255,255,0.10) 0 0.9px, transparent 1.4px);
+      background-size: 240px 240px;
+      background-position: 90px 140px;
+      animation: shimmer 8s ease-in-out infinite;
+      opacity: 0.45;
     }
 
     .content {
-      width: 100%;
-      max-width: 760px;
+      position: relative;
+      z-index: 5;
+      width: min(92vw, 880px);
+      padding: 24px 18px;
       text-align: center;
-      padding: 24px;
-      transform: translateY(-20px);
+      animation: fadeUp 1.2s ease both;
     }
 
     .eyebrow {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.28em;
+      margin: 0 0 14px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.42em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.76);
-      margin-bottom: 18px;
-      text-shadow: 0 4px 18px rgba(0,0,0,0.30);
+      color: rgba(255,255,255,0.9);
+      text-shadow: 0 0 12px rgba(255, 120, 220, 0.18);
     }
 
     h1 {
-      font-size: clamp(2.9rem, 9vw, 6.9rem);
-      line-height: 0.94;
-      font-weight: 700;
-      letter-spacing: -0.05em;
-      text-transform: uppercase;
-      text-shadow: 0 10px 30px rgba(0,0,0,0.34);
+      margin: 0;
+      font-size: clamp(72px, 14vw, 158px);
+      line-height: 0.88;
+      letter-spacing: -0.06em;
+      font-weight: 800;
+      text-transform: lowercase;
+      color: #ffffff;
+      text-shadow:
+        0 0 18px rgba(255,255,255,0.05),
+        0 0 34px rgba(255, 90, 190, 0.08);
     }
 
-    .coming {
+    h1 .soon {
       display: block;
-    }
-
-    .soon {
-      display: block;
-      margin-top: 4px;
-      background: linear-gradient(90deg, #ffffff 0%, #ffe0f6 34%, #f1b8ff 68%, #ffffff 100%);
+      margin-top: 8px;
+      background: linear-gradient(180deg, #ffd6fa 0%, #ebb2ff 35%, #d791ff 72%, #bf76ff 100%);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 200% auto;
-      animation: shimmer 8s linear infinite;
+      background-clip: text;
+      color: transparent;
+      text-shadow: none;
+      filter: drop-shadow(0 0 22px rgba(219, 122, 255, 0.15));
     }
 
     .subline {
-      margin-top: 24px;
-      font-size: clamp(1rem, 2vw, 1.14rem);
-      line-height: 1.65;
-      color: var(--muted);
-      max-width: 620px;
-      margin-left: auto;
-      margin-right: auto;
-      text-shadow: 0 4px 18px rgba(0,0,0,0.30);
+      margin: 28px auto 0;
+      max-width: 480px;
+      font-size: clamp(17px, 2.1vw, 24px);
+      line-height: 1.45;
+      font-weight: 400;
+      color: rgba(255,255,255,0.88);
+      text-shadow: 0 0 18px rgba(255, 98, 180, 0.08);
+    }
+
+    .subline .break {
+      display: block;
     }
 
     .cta-wrap {
       margin-top: 34px;
       display: flex;
+      align-items: center;
       justify-content: center;
     }
 
@@ -197,54 +203,48 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      min-width: 250px;
+      min-width: 288px;
       padding: 17px 30px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.22);
-      background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.08));
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
       color: #ffffff;
-      font-size: 0.98rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
       text-decoration: none;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
       box-shadow:
-        0 30px 100px rgba(0,0,0,0.55),
-        0 0 45px rgba(255, 0, 170, 0.35);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease,
-        background 0.35s ease;
-      overflow: hidden;
+        inset 0 1px 0 rgba(255,255,255,0.14),
+        0 12px 36px rgba(0,0,0,0.28),
+        0 0 40px rgba(214, 98, 255, 0.10);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease;
     }
 
     .cta::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        120deg,
-        transparent 0%,
-        rgba(255,255,255,0.22) 30%,
-        transparent 60%
-      );
-      transform: translateX(-120%);
-      transition: transform 0.9s ease;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0.04), rgba(255,130,220,0.22));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
     }
 
     .cta:hover {
-      transform: translateY(-2px) scale(1.018);
-      border-color: rgba(255,255,255,0.34);
-      background: linear-gradient(180deg, rgba(255,255,255,0.26), rgba(255,255,255,0.10));
+      transform: translateY(-2px) scale(1.012);
+      border-color: rgba(255,255,255,0.28);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
       box-shadow:
-        0 34px 110px rgba(0,0,0,0.60),
-        0 0 56px rgba(255, 0, 170, 0.42);
-    }
-
-    .cta:hover::before {
-      transform: translateX(120%);
+        inset 0 1px 0 rgba(255,255,255,0.18),
+        0 16px 42px rgba(0,0,0,0.34),
+        0 0 54px rgba(214, 98, 255, 0.16);
     }
 
     .cta:active {
@@ -252,186 +252,175 @@
     }
 
     .cta svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
+      width: 21px;
+      height: 21px;
+      flex: 0 0 auto;
     }
 
-    .footer-note {
-      margin-top: 18px;
-      font-size: 0.82rem;
-      color: var(--muted-soft);
-      letter-spacing: 0.04em;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    .micro {
+      margin-top: 16px;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.54);
     }
 
-    @keyframes slowZoom {
-      0% {
-        transform: scale(1);
+    @keyframes slowFloat {
+      from {
+        transform: scale(1.035) translate3d(0, 0, 0);
       }
-      100% {
-        transform: scale(1.075);
+      to {
+        transform: scale(1.06) translate3d(0, -8px, 0);
       }
     }
 
-    @keyframes floatGlow {
-      0%, 100% {
-        transform: translateY(0px) translateX(0px);
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
       }
-      50% {
-        transform: translateY(-12px) translateX(8px);
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes driftOne {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-26px);
+      }
+    }
+
+    @keyframes driftTwo {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(22px);
       }
     }
 
     @keyframes shimmer {
-      0% {
-        background-position: 0% center;
+      0%, 100% {
+        opacity: 0.30;
       }
-      100% {
-        background-position: 200% center;
+      50% {
+        opacity: 0.55;
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 980px) {
+      .bg-image {
+        background-position: center 18%;
+      }
+
+      .subline {
+        max-width: 420px;
+      }
+    }
+
+    @media (max-width: 680px) {
       .content {
-        padding: 12px;
-        transform: translateY(-10px);
+        padding: 18px 14px 28px;
+      }
+
+      .bg-image {
+        background-position: center 14%;
+        transform: scale(1.08);
+      }
+
+      .eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.34em;
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        font-size: clamp(58px, 21vw, 108px);
+        line-height: 0.9;
       }
 
       .subline {
         margin-top: 22px;
-        font-size: 0.98rem;
-        line-height: 1.6;
+        font-size: 18px;
+        line-height: 1.5;
+        max-width: 320px;
+      }
+
+      .cta-wrap {
+        margin-top: 28px;
       }
 
       .cta {
-        width: 100%;
-        max-width: 310px;
+        min-width: 252px;
         padding: 16px 24px;
+        font-size: 18px;
       }
 
-      .footer-note {
-        font-size: 0.78rem;
+      .micro {
+        margin-top: 14px;
+        font-size: 11px;
+        letter-spacing: 0.08em;
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .image-layer,
-      .glow,
-      .soon,
-      .cta::before {
-        animation: none !important;
-        transition: none !important;
+    @media (max-width: 430px) {
+      .bg-image {
+        background-position: center 12%;
+      }
+
+      .subline .break {
+        display: block;
+      }
+
+      .cta {
+        min-width: 236px;
+        font-size: 17px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="background">
-    <div class="image-layer"></div>
-    <div class="image-overlay"></div>
+  <div class="bg-image"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+  <div class="particles"></div>
 
-    <div class="glow one"></div>
-    <div class="glow two"></div>
-    <div class="glow three"></div>
+  <main class="content">
+    <p class="eyebrow">Nova</p>
 
-    <canvas id="particles"></canvas>
-  </div>
+    <h1>
+      coming
+      <span class="soon">soon</span>
+    </h1>
 
-  <main class="page">
-    <section class="content">
-      <div class="eyebrow">Nova</div>
+    <p class="subline">
+      This is not random.
+      <span class="break">You were meant to find this.</span>
+    </p>
 
-      <h1>
-        <span class="coming">Coming</span>
-        <span class="soon">Soon</span>
-      </h1>
+    <div class="cta-wrap">
+      <a
+        class="cta"
+        href="https://instagram.com/youarenova.ai"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Enter Nova on Instagram"
+      >
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2" stroke="currentColor" stroke-width="2"></rect>
+          <circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="2"></circle>
+          <circle cx="17.6" cy="6.4" r="1.2" fill="currentColor"></circle>
+        </svg>
+        <span>Enter Nova</span>
+      </a>
+    </div>
 
-      <p class="subline">
-        You were meant to find this.
-      </p>
-
-      <div class="cta-wrap">
-        <a class="cta" href="https://instagram.com/youarenova.ai" target="_blank" rel="noopener noreferrer" aria-label="Follow Nova on Instagram">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M7 2H17C19.7614 2 22 4.23858 22 7V17C22 19.7614 19.7614 22 17 22H7C4.23858 22 2 19.7614 2 17V7C2 4.23858 4.23858 2 7 2Z" stroke="currentColor" stroke-width="1.8"/>
-            <path d="M16.5 11.37C16.6234 12.2022 16.4813 13.0521 16.0943 13.799C15.7073 14.5459 15.0953 15.1524 14.3451 15.5326C13.5949 15.9128 12.7438 16.0469 11.9128 15.916C11.0818 15.785 10.3134 15.3958 9.71677 14.8047C9.12014 14.2135 8.72385 13.4488 8.58524 12.619C8.44664 11.7891 8.57295 10.9368 8.94635 10.1832C9.31975 9.42962 9.92062 8.81207 10.6639 8.41821C11.4072 8.02435 12.2558 7.87441 13.0891 7.98999C13.9391 8.10786 14.726 8.49529 15.3324 9.09516C15.9388 9.69502 16.3349 10.4776 16.46 11.3265" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Follow On Instagram
-        </a>
-      </div>
-
-    
-    </section>
+    <div class="micro">Only a few will understand.</div>
   </main>
-
-  <script>
-    const canvas = document.getElementById("particles");
-    const ctx = canvas.getContext("2d");
-
-    let particles = [];
-
-    function resizeCanvas() {
-      const ratio = window.devicePixelRatio || 1;
-      canvas.width = window.innerWidth * ratio;
-      canvas.height = window.innerHeight * ratio;
-      canvas.style.width = window.innerWidth + "px";
-      canvas.style.height = window.innerHeight + "px";
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.scale(ratio, ratio);
-      createParticles();
-    }
-
-    function createParticles() {
-      particles = [];
-      const count = window.innerWidth < 768 ? 28 : 44;
-
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          x: Math.random() * window.innerWidth,
-          y: Math.random() * window.innerHeight,
-          r: Math.random() * 1.8 + 0.35,
-          vx: (Math.random() - 0.5) * 0.10,
-          vy: (Math.random() - 0.5) * 0.10,
-          a: Math.random() * 0.42 + 0.08,
-          pulse: Math.random() * Math.PI * 2
-        });
-      }
-    }
-
-    function drawParticles() {
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-
-      for (const p of particles) {
-        p.x += p.vx;
-        p.y += p.vy;
-        p.pulse += 0.01;
-
-        if (p.x < -20) p.x = window.innerWidth + 20;
-        if (p.x > window.innerWidth + 20) p.x = -20;
-        if (p.y < -20) p.y = window.innerHeight + 20;
-        if (p.y > window.innerHeight + 20) p.y = -20;
-
-        const alpha = p.a + Math.sin(p.pulse) * 0.04;
-
-        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 9);
-        gradient.addColorStop(0, `rgba(255, 120, 220, ${alpha})`);
-        gradient.addColorStop(0.45, `rgba(180, 100, 255, ${alpha * 0.42})`);
-        gradient.addColorStop(1, "rgba(255,255,255,0)");
-
-        ctx.beginPath();
-        ctx.fillStyle = gradient;
-        ctx.arc(p.x, p.y, p.r * 9, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      requestAnimationFrame(drawParticles);
-    }
-
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
-    drawParticles();
-  </script>
 </body>
 </html>
