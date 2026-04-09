@@ -22,9 +22,9 @@ min-height: 100%;
 body {
 font-family: 'Montserrat Alternates', sans-serif;
 background:
-radial-gradient(circle at 20% 20%, rgba(196, 58, 255, 0.20), transparent 35%),
-radial-gradient(circle at 80% 30%, rgba(255, 0, 153, 0.16), transparent 30%),
-linear-gradient(135deg, #05030a 0%, #11071d 45%, #05030a 100%);
+radial-gradient(circle at 20% 20%, rgba(196, 58, 255, 0.18), transparent 35%),
+radial-gradient(circle at 80% 30%, rgba(255, 0, 153, 0.12), transparent 30%),
+linear-gradient(135deg, #04020a 0%, #10061a 45%, #04020a 100%);
 color: #ffffff;
 overflow-x: hidden;
 }
@@ -34,7 +34,7 @@ overflow-x: hidden;
 @keyframes fadeInUp {
 from {
 opacity: 0;
-transform: translateY(16px);
+transform: translateY(18px);
 }
 to {
 opacity: 1;
@@ -44,7 +44,7 @@ transform: translateY(0);
 
 @keyframes glowPulse {
 0% {
-opacity: 0.65;
+opacity: 0.55;
 transform: scale(0.96);
 }
 50% {
@@ -52,7 +52,7 @@ opacity: 1;
 transform: scale(1.04);
 }
 100% {
-opacity: 0.65;
+opacity: 0.55;
 transform: scale(0.96);
 }
 }
@@ -62,35 +62,111 @@ transform: scale(0.96);
 transform: rotate(-3deg) translateY(0px);
 }
 50% {
-transform: rotate(-3deg) translateY(-10px);
+transform: rotate(-3deg) translateY(-8px);
 }
 100% {
 transform: rotate(-3deg) translateY(0px);
 }
 }
 
-@keyframes buttonGlow {
+@keyframes imageDrift {
 0% {
-box-shadow: 0 14px 36px rgba(255, 31, 191, 0.28);
+transform: scale(1.08) translateY(0px);
 }
 50% {
-box-shadow: 0 18px 46px rgba(139, 92, 246, 0.42);
+transform: scale(1.12) translateY(-6px);
 }
 100% {
-box-shadow: 0 14px 36px rgba(255, 31, 191, 0.28);
+transform: scale(1.08) translateY(0px);
+}
+}
+
+@keyframes buttonGlow {
+0% {
+box-shadow: 0 14px 36px rgba(255, 31, 191, 0.24);
+}
+50% {
+box-shadow: 0 18px 48px rgba(139, 92, 246, 0.40);
+}
+100% {
+box-shadow: 0 14px 36px rgba(255, 31, 191, 0.24);
+}
+}
+
+@keyframes particleFloat1 {
+0% {
+transform: translateY(0px) translateX(0px);
+opacity: 0.10;
+}
+50% {
+transform: translateY(-18px) translateX(10px);
+opacity: 0.24;
+}
+100% {
+transform: translateY(0px) translateX(0px);
+opacity: 0.10;
+}
+}
+
+@keyframes particleFloat2 {
+0% {
+transform: translateY(0px) translateX(0px);
+opacity: 0.08;
+}
+50% {
+transform: translateY(14px) translateX(-12px);
+opacity: 0.18;
+}
+100% {
+transform: translateY(0px) translateX(0px);
+opacity: 0.08;
 }
 }
 
 .page {
+position: relative;
 min-height: 100vh;
 display: flex;
 align-items: center;
 justify-content: center;
 padding: 40px;
+overflow: hidden;
 animation: fadeInUp 1s ease;
 }
 
+/* SUBTILER PARTIKEL-GLOW */
+
+.page::before,
+.page::after {
+content: "";
+position: absolute;
+inset: 0;
+pointer-events: none;
+z-index: 0;
+}
+
+.page::before {
+background:
+radial-gradient(circle at 14% 18%, rgba(255,255,255,0.18) 0 1px, transparent 2px),
+radial-gradient(circle at 22% 74%, rgba(214,150,255,0.22) 0 1.5px, transparent 3px),
+radial-gradient(circle at 72% 24%, rgba(255,120,220,0.18) 0 1px, transparent 3px),
+radial-gradient(circle at 84% 70%, rgba(195,130,255,0.22) 0 1.5px, transparent 3px),
+radial-gradient(circle at 62% 58%, rgba(255,255,255,0.12) 0 1px, transparent 2px);
+animation: particleFloat1 12s ease-in-out infinite;
+}
+
+.page::after {
+background:
+radial-gradient(circle at 10% 60%, rgba(255,255,255,0.10) 0 1px, transparent 2px),
+radial-gradient(circle at 38% 16%, rgba(255,120,220,0.14) 0 1.5px, transparent 3px),
+radial-gradient(circle at 68% 78%, rgba(215,160,255,0.14) 0 1.5px, transparent 3px),
+radial-gradient(circle at 88% 36%, rgba(255,255,255,0.08) 0 1px, transparent 2px);
+animation: particleFloat2 15s ease-in-out infinite;
+}
+
 .hero {
+position: relative;
+z-index: 1;
 width: 100%;
 max-width: 1320px;
 display: grid;
@@ -99,7 +175,7 @@ gap: 48px;
 align-items: center;
 }
 
-/* TEXTBEREICH */
+/* TEXT */
 
 .copy {
 max-width: 640px;
@@ -158,9 +234,9 @@ font-weight: 800;
 letter-spacing: 0.2px;
 color: #fff;
 background: linear-gradient(90deg, #ff1fbf 0%, #8b5cf6 100%);
-box-shadow: 0 14px 36px rgba(255, 31, 191, 0.28);
+box-shadow: 0 14px 36px rgba(255, 31, 191, 0.24);
 transition: transform 0.2s ease, opacity 0.2s ease;
-animation: buttonGlow 3.6s ease-in-out infinite;
+animation: buttonGlow 3.8s ease-in-out infinite;
 }
 
 .button:hover {
@@ -171,7 +247,7 @@ opacity: 0.98;
 .note {
 font-size: 14px;
 line-height: 1.5;
-color: rgba(255,255,255,0.65);
+color: rgba(255,255,255,0.66);
 letter-spacing: 0.4px;
 }
 
@@ -187,18 +263,18 @@ min-height: 640px;
 
 .visual-glow {
 position: absolute;
-width: 84%;
-height: 84%;
+width: 86%;
+height: 86%;
 border-radius: 50%;
-background: radial-gradient(circle, rgba(183, 71, 255, 0.28) 0%, rgba(255, 0, 170, 0.12) 38%, transparent 72%);
-filter: blur(38px);
-animation: glowPulse 7s ease-in-out infinite;
+background: radial-gradient(circle, rgba(183, 71, 255, 0.26) 0%, rgba(255, 0, 170, 0.10) 38%, transparent 72%);
+filter: blur(40px);
+animation: glowPulse 7.5s ease-in-out infinite;
 }
 
 .visual-card {
 position: relative;
 width: min(100%, 460px);
-aspect-ratio: 4 / 5.4;
+aspect-ratio: 4 / 5.5;
 border-radius: 34px;
 overflow: hidden;
 background: rgba(255,255,255,0.03);
@@ -209,7 +285,7 @@ box-shadow:
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(10px);
 transform: rotate(-3deg);
-animation: cardFloat 6s ease-in-out infinite;
+animation: cardFloat 7s ease-in-out infinite;
 }
 
 .visual-card img {
@@ -217,15 +293,17 @@ width: 100%;
 height: 100%;
 display: block;
 object-fit: cover;
-object-position: center 28%;
-filter: brightness(0.95) contrast(1.05) saturate(1.04);
+object-position: center 26%;
+filter: brightness(0.95) contrast(1.06) saturate(1.04);
+animation: imageDrift 10s ease-in-out infinite;
 }
 
 .visual-card::after {
 content: "";
 position: absolute;
 inset: 0;
-background: linear-gradient(to top, rgba(5,3,10,0.42) 0%, rgba(5,3,10,0.10) 42%, rgba(255,255,255,0.02) 100%);
+background:
+linear-gradient(to top, rgba(5,3,10,0.38) 0%, rgba(5,3,10,0.08) 42%, rgba(255,255,255,0.02) 100%);
 pointer-events: none;
 }
 
@@ -285,8 +363,13 @@ transform: none;
 animation: none;
 }
 
+.visual-card img {
+animation: none;
+object-position: center 24%;
+}
+
 .visual-glow {
-animation: glowPulse 7s ease-in-out infinite;
+animation: glowPulse 7.5s ease-in-out infinite;
 }
 
 .floating-tag {
@@ -343,7 +426,7 @@ Nova auf Instagram folgen
 <div class="visual-glow"></div>
 
 <div class="visual-card">
-<img src="Nova-final.jpg" alt="Nova">
+<img src="Nova-final-01.jpg" alt="Nova">
 </div>
 
 <div class="floating-tag">SuperNova Energy</div>
