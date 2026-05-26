@@ -3,21 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nova — Coming Soon</title>
-  <meta name="description" content="Nova is coming soon." />
+
+  <title>Nova | A cinematic story about mindset, identity and self-discovery</title>
+
+  <meta name="description" content="Nova is a cinematic Instagram story about mindset, identity, inner strength and self-discovery. Enter the world of Nova." />
+  <meta name="keywords" content="Nova, You Are Nova, mindset, self-discovery, identity, inner strength, cinematic story, Instagram story, psychological storytelling, Nova Instagram" />
+  <meta name="author" content="Nova" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://youarenova.ai/" />
+
+  <meta property="og:title" content="Nova | You were meant to find this." />
+  <meta property="og:description" content="A cinematic story about mindset, identity, inner strength and self-discovery." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://youarenova.ai/" />
+  <meta property="og:image" content="https://youarenova.ai/Nova-final-01.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nova | You were meant to find this." />
+  <meta name="twitter:description" content="A cinematic story about mindset, identity, inner strength and self-discovery." />
+  <meta name="twitter:image" content="https://youarenova.ai/Nova-final-01.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Nova",
+    "url": "https://youarenova.ai/",
+    "description": "Nova is a cinematic Instagram story about mindset, identity, inner strength and self-discovery.",
+    "sameAs": [
+      "https://www.instagram.com/youarenova.ai/"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <style>
     :root {
       --bg: #05020a;
       --text: #ffffff;
       --muted: rgba(255,255,255,0.82);
       --line: rgba(255,255,255,0.18);
-      --glass: rgba(255,255,255,0.08);
       --shadow: rgba(0,0,0,0.45);
-      --violet: rgba(155, 92, 255, 0.28);
-      --pink: rgba(255, 66, 163, 0.22);
     }
 
     * {
@@ -41,6 +72,7 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+
       background:
         radial-gradient(circle at 20% 20%, rgba(255, 0, 128, 0.08), transparent 28%),
         radial-gradient(circle at 80% 15%, rgba(120, 0, 255, 0.10), transparent 30%),
@@ -51,13 +83,21 @@
     .bg-image {
       position: absolute;
       inset: 0;
+
       background-image:
         linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.42)),
         url("Nova-final-01.jpg");
+
       background-size: cover;
       background-position: center 22%;
+
       transform: scale(1.035);
-      filter: saturate(1.04) contrast(1.08) brightness(0.82);
+
+      filter:
+        saturate(1.04)
+        contrast(1.08)
+        brightness(0.82);
+
       animation: slowFloat 14s ease-in-out infinite alternate;
     }
 
@@ -65,10 +105,12 @@
       content: "";
       position: absolute;
       inset: 0;
+
       background:
         radial-gradient(circle at 50% 48%, rgba(255, 60, 170, 0.18), transparent 24%),
         radial-gradient(circle at 52% 40%, rgba(155, 92, 255, 0.14), transparent 28%),
         linear-gradient(to right, rgba(255, 0, 140, 0.08), transparent 35%, transparent 65%, rgba(120, 0, 255, 0.10));
+
       mix-blend-mode: screen;
       opacity: 0.92;
       pointer-events: none;
@@ -77,8 +119,10 @@
     .vignette {
       position: absolute;
       inset: 0;
+
       background:
         radial-gradient(circle at center, transparent 34%, rgba(0,0,0,0.20) 64%, rgba(0,0,0,0.60) 100%);
+
       pointer-events: none;
     }
 
@@ -87,8 +131,10 @@
       inset: 0;
       pointer-events: none;
       opacity: 0.08;
+
       background-image:
         radial-gradient(rgba(255,255,255,0.8) 0.45px, transparent 0.55px);
+
       background-size: 6px 6px;
       mix-blend-mode: soft-light;
     }
@@ -107,9 +153,10 @@
         radial-gradient(circle, rgba(255, 128, 210, 0.22) 0 1.2px, transparent 1.8px),
         radial-gradient(circle, rgba(180, 110, 255, 0.20) 0 1.1px, transparent 1.7px),
         radial-gradient(circle, rgba(255, 255, 255, 0.10) 0 1px, transparent 1.5px);
+
       background-size: 210px 210px, 270px 270px, 180px 180px;
       background-position: 0 0, 60px 40px, 110px 80px;
-      filter: blur(0.25px);
+
       animation: driftOne 18s linear infinite;
       opacity: 0.8;
     }
@@ -118,8 +165,10 @@
       background:
         radial-gradient(circle, rgba(255, 70, 170, 0.16) 0 1.2px, transparent 1.9px),
         radial-gradient(circle, rgba(155, 92, 255, 0.16) 0 1.1px, transparent 1.8px);
+
       background-size: 320px 320px, 260px 260px;
       background-position: 20px 30px, 140px 120px;
+
       animation: driftTwo 24s linear infinite reverse;
       opacity: 0.7;
     }
@@ -127,8 +176,10 @@
     .particles::after {
       background:
         radial-gradient(circle, rgba(255,255,255,0.10) 0 0.9px, transparent 1.4px);
+
       background-size: 240px 240px;
       background-position: 90px 140px;
+
       animation: shimmer 8s ease-in-out infinite;
       opacity: 0.45;
     }
@@ -136,54 +187,75 @@
     .content {
       position: relative;
       z-index: 5;
+
       width: min(92vw, 880px);
+
       padding: 24px 18px;
+
       text-align: center;
+
       animation: fadeUp 1.2s ease both;
     }
 
     .eyebrow {
       margin: 0 0 14px;
+
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.42em;
+
       text-transform: uppercase;
+
       color: rgba(255,255,255,0.9);
-      text-shadow: 0 0 12px rgba(255, 120, 220, 0.18);
     }
 
     h1 {
       margin: 0;
+
       font-size: clamp(72px, 14vw, 158px);
+
       line-height: 0.88;
+
       letter-spacing: -0.06em;
+
       font-weight: 800;
+
       text-transform: lowercase;
+
       color: #ffffff;
-      text-shadow:
-        0 0 18px rgba(255,255,255,0.05),
-        0 0 34px rgba(255, 90, 190, 0.08);
     }
 
     h1 .soon {
       display: block;
+
       margin-top: 8px;
-      background: linear-gradient(180deg, #ffd6fa 0%, #ebb2ff 35%, #d791ff 72%, #bf76ff 100%);
+
+      background: linear-gradient(
+        180deg,
+        #ffd6fa 0%,
+        #ebb2ff 35%,
+        #d791ff 72%,
+        #bf76ff 100%
+      );
+
       -webkit-background-clip: text;
       background-clip: text;
+
       color: transparent;
-      text-shadow: none;
-      filter: drop-shadow(0 0 22px rgba(219, 122, 255, 0.15));
     }
 
     .subline {
       margin: 28px auto 0;
+
       max-width: 480px;
+
       font-size: clamp(17px, 2.1vw, 24px);
+
       line-height: 1.45;
+
       font-weight: 400;
+
       color: rgba(255,255,255,0.88);
-      text-shadow: 0 0 18px rgba(255, 98, 180, 0.08);
     }
 
     .subline .break {
@@ -192,6 +264,7 @@
 
     .cta-wrap {
       margin-top: 34px;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -199,56 +272,66 @@
 
     .cta {
       position: relative;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
+
       min-width: 288px;
+
       padding: 17px 30px;
+
       border-radius: 999px;
+
       border: 1px solid var(--line);
+
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.10),
+          rgba(255,255,255,0.04)
+        );
+
       color: #ffffff;
+
       text-decoration: none;
+
       font-size: 20px;
       font-weight: 600;
+
       letter-spacing: 0.01em;
+
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.14),
         0 12px 36px rgba(0,0,0,0.28),
         0 0 40px rgba(214, 98, 255, 0.10);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease;
-    }
 
-    .cta::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0.04), rgba(255,130,220,0.22));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
+      backdrop-filter: blur(12px);
+
+      transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease,
+        background 0.28s ease;
     }
 
     .cta:hover {
-      transform: translateY(-2px) scale(1.012);
+      transform: translateY(-2px) scale(1.02);
+
       border-color: rgba(255,255,255,0.28);
+
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.14),
+          rgba(255,255,255,0.06)
+        );
+
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.18),
         0 16px 42px rgba(0,0,0,0.34),
         0 0 54px rgba(214, 98, 255, 0.16);
-    }
-
-    .cta:active {
-      transform: translateY(0) scale(0.995);
     }
 
     .cta svg {
@@ -259,10 +342,14 @@
 
     .micro {
       margin-top: 16px;
+
       font-size: 12px;
       font-weight: 400;
+
       letter-spacing: 0.10em;
+
       text-transform: uppercase;
+
       color: rgba(255,255,255,0.54);
     }
 
@@ -270,6 +357,7 @@
       from {
         transform: scale(1.035) translate3d(0, 0, 0);
       }
+
       to {
         transform: scale(1.06) translate3d(0, -8px, 0);
       }
@@ -280,6 +368,7 @@
         opacity: 0;
         transform: translateY(18px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -290,6 +379,7 @@
       from {
         transform: translateY(0);
       }
+
       to {
         transform: translateY(-26px);
       }
@@ -299,6 +389,7 @@
       from {
         transform: translateY(0);
       }
+
       to {
         transform: translateY(22px);
       }
@@ -308,6 +399,7 @@
       0%, 100% {
         opacity: 0.30;
       }
+
       50% {
         opacity: 0.55;
       }
@@ -373,10 +465,6 @@
         background-position: center 12%;
       }
 
-      .subline .break {
-        display: block;
-      }
-
       .cta {
         min-width: 236px;
         font-size: 17px;
@@ -384,6 +472,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="bg-image"></div>
   <div class="vignette"></div>
@@ -400,13 +489,15 @@
 
     <p class="subline">
       This is not random.
-      <span class="break">You were meant to find this.</span>
+      <span class="break">
+        You were meant to find this.
+      </span>
     </p>
 
     <div class="cta-wrap">
       <a
         class="cta"
-        href="https://instagram.com/youarenova.ai"
+        href="https://www.instagram.com/youarenova.ai/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Enter Nova on Instagram"
@@ -416,11 +507,14 @@
           <circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="2"></circle>
           <circle cx="17.6" cy="6.4" r="1.2" fill="currentColor"></circle>
         </svg>
+
         <span>Enter Nova</span>
       </a>
     </div>
 
-    <div class="micro">Only a few will understand.</div>
+    <div class="micro">
+      Only a few will understand.
+    </div>
   </main>
 </body>
 </html>
