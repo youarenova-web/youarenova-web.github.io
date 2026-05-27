@@ -7,22 +7,19 @@
   <title>Nova | A cinematic story about mindset, identity and self-discovery</title>
 
   <meta name="description" content="Nova is a cinematic Instagram story about mindset, identity, inner strength and self-discovery. Enter the world of Nova." />
-  <meta name="keywords" content="Nova, You Are Nova, mindset, self-discovery, identity, inner strength, cinematic story, Instagram story, psychological storytelling, Nova Instagram" />
+  <meta name="keywords" content="Nova, You Are Nova, mindset, self-discovery, identity, inner strength, cinematic story, Instagram story, psychological storytelling" />
   <meta name="author" content="Nova" />
   <meta name="robots" content="index, follow" />
 
   <link rel="canonical" href="https://youarenova.ai/" />
 
   <meta property="og:title" content="Nova | You were meant to find this." />
-  <meta property="og:description" content="A cinematic story about mindset, identity, inner strength and self-discovery." />
+  <meta property="og:description" content="A cinematic story about mindset, identity and self-discovery." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://youarenova.ai/" />
   <meta property="og:image" content="https://youarenova.ai/Nova-final-01.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Nova | You were meant to find this." />
-  <meta name="twitter:description" content="A cinematic story about mindset, identity, inner strength and self-discovery." />
-  <meta name="twitter:image" content="https://youarenova.ai/Nova-final-01.jpg" />
 
   <script type="application/ld+json">
   {
@@ -30,7 +27,6 @@
     "@type": "WebSite",
     "name": "Nova",
     "url": "https://youarenova.ai/",
-    "description": "Nova is a cinematic Instagram story about mindset, identity, inner strength and self-discovery.",
     "sameAs": [
       "https://www.instagram.com/you.are.nova/"
     ]
@@ -39,28 +35,29 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root {
       --bg: #05020a;
       --text: #ffffff;
-      --line: rgba(255,255,255,0.18);
+      --line: rgba(255,255,255,0.16);
     }
 
     * {
       box-sizing: border-box;
-    }
-
-    html, body {
       margin: 0;
       padding: 0;
+    }
+
+    html,
+    body {
       width: 100%;
-      min-height: 100%;
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Montserrat Alternates", sans-serif;
+      height: 100%;
       overflow: hidden;
+      background: #05020a;
+      font-family: "Montserrat Alternates", sans-serif;
     }
 
     body {
@@ -68,43 +65,57 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      background: #05020a;
     }
 
     .bg-video {
       position: absolute;
       inset: 0;
+
       width: 100%;
       height: 100%;
+
       object-fit: cover;
       object-position: center center;
-      transform: scale(1.04);
-      filter: saturate(1.08) contrast(1.12) brightness(0.62);
-      animation: videoBreath 14s ease-in-out infinite alternate;
+
+      transform: scale(1.05);
+
+      filter:
+        brightness(0.48)
+        contrast(1.12)
+        saturate(1.08);
+
+      animation: videoMove 16s ease-in-out infinite alternate;
     }
 
-    .video-overlay {
+    .overlay {
       position: absolute;
       inset: 0;
+
       background:
-        linear-gradient(to bottom, rgba(0,0,0,0.34), rgba(0,0,0,0.56)),
-        radial-gradient(circle at 50% 46%, rgba(255, 60, 170, 0.18), transparent 30%),
-        radial-gradient(circle at 52% 40%, rgba(155, 92, 255, 0.16), transparent 34%),
-        radial-gradient(circle at center, transparent 32%, rgba(0,0,0,0.52) 100%);
-      pointer-events: none;
-      z-index: 2;
-    }
+        linear-gradient(to bottom,
+          rgba(0,0,0,0.30),
+          rgba(0,0,0,0.60)
+        ),
 
-    .grain {
-      position: absolute;
-      inset: 0;
-      z-index: 3;
-      pointer-events: none;
-      opacity: 0.075;
-      background-image: radial-gradient(rgba(255,255,255,0.8) 0.45px, transparent 0.55px);
-      background-size: 6px 6px;
-      mix-blend-mode: soft-light;
+        radial-gradient(
+          circle at center,
+          rgba(255, 60, 170, 0.12),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at center,
+          rgba(155, 92, 255, 0.10),
+          transparent 42%
+        ),
+
+        radial-gradient(
+          circle at center,
+          transparent 30%,
+          rgba(0,0,0,0.58) 100%
+        );
+
+      z-index: 2;
     }
 
     .particles,
@@ -114,84 +125,109 @@
       inset: 0;
       content: "";
       pointer-events: none;
-      z-index: 4;
+      z-index: 3;
     }
 
     .particles {
       background:
-        radial-gradient(circle, rgba(255, 128, 210, 0.18) 0 1.2px, transparent 1.8px),
-        radial-gradient(circle, rgba(180, 110, 255, 0.16) 0 1.1px, transparent 1.7px),
-        radial-gradient(circle, rgba(255, 255, 255, 0.08) 0 1px, transparent 1.5px);
-      background-size: 210px 210px, 270px 270px, 180px 180px;
-      background-position: 0 0, 60px 40px, 110px 80px;
-      animation: driftOne 18s linear infinite;
-      opacity: 0.7;
+        radial-gradient(circle, rgba(255,255,255,0.10) 0 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,100,220,0.14) 0 1.2px, transparent 1.8px),
+        radial-gradient(circle, rgba(180,110,255,0.14) 0 1.2px, transparent 1.8px);
+
+      background-size:
+        180px 180px,
+        240px 240px,
+        320px 320px;
+
+      animation: particlesMove 18s linear infinite;
+
+      opacity: 0.55;
     }
 
     .particles::before {
       background:
-        radial-gradient(circle, rgba(255, 70, 170, 0.14) 0 1.2px, transparent 1.9px),
-        radial-gradient(circle, rgba(155, 92, 255, 0.14) 0 1.1px, transparent 1.8px);
-      background-size: 320px 320px, 260px 260px;
-      background-position: 20px 30px, 140px 120px;
-      animation: driftTwo 24s linear infinite reverse;
-      opacity: 0.65;
-    }
+        radial-gradient(circle, rgba(255,255,255,0.08) 0 1px, transparent 1.4px);
 
-    .particles::after {
-      background:
-        radial-gradient(circle, rgba(255,255,255,0.08) 0 0.9px, transparent 1.4px);
-      background-size: 240px 240px;
-      background-position: 90px 140px;
-      animation: shimmer 8s ease-in-out infinite;
+      background-size: 260px 260px;
+
+      animation: particlesMoveReverse 24s linear infinite;
+
       opacity: 0.4;
     }
 
     .content {
       position: relative;
       z-index: 10;
-      width: min(92vw, 880px);
-      padding: 24px 18px;
+
+      width: min(92vw, 900px);
+
       text-align: center;
-      animation: fadeUp 1.2s ease both;
+
+      animation: fadeIn 1.4s ease;
     }
 
     .eyebrow {
-      margin: 0 0 14px;
+      margin-bottom: 18px;
+
       font-size: 12px;
       font-weight: 500;
+
       letter-spacing: 0.42em;
+
       text-transform: uppercase;
-      color: rgba(255,255,255,0.9);
+
+      color: rgba(255,255,255,0.82);
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(72px, 14vw, 158px);
-      line-height: 0.88;
-      letter-spacing: -0.06em;
+      font-size: clamp(68px, 14vw, 168px);
+
+      line-height: 0.84;
+
       font-weight: 800;
+
+      letter-spacing: -0.07em;
+
       text-transform: lowercase;
-      color: #ffffff;
+
+      color: white;
+
+      text-shadow:
+        0 0 18px rgba(255,255,255,0.04),
+        0 0 40px rgba(214, 98, 255, 0.10);
     }
 
-    h1 .soon {
+    h1 .nova {
       display: block;
-      margin-top: 8px;
-      background: linear-gradient(180deg, #ffd6fa 0%, #ebb2ff 35%, #d791ff 72%, #bf76ff 100%);
+
+      background:
+        linear-gradient(
+          180deg,
+          #ffe3fb 0%,
+          #ebb2ff 38%,
+          #d791ff 70%,
+          #bf76ff 100%
+        );
+
       -webkit-background-clip: text;
       background-clip: text;
+
       color: transparent;
     }
 
     .subline {
       margin: 28px auto 0;
-      max-width: 480px;
-      font-size: clamp(17px, 2.1vw, 24px);
+
+      max-width: 520px;
+
+      font-size: clamp(18px, 2vw, 24px);
+
       line-height: 1.45;
-      font-weight: 400;
-      color: rgba(255,255,255,0.9);
-      text-shadow: 0 8px 24px rgba(0,0,0,0.45);
+
+      color: rgba(255,255,255,0.88);
+
+      text-shadow:
+        0 10px 30px rgba(0,0,0,0.42);
     }
 
     .subline .break {
@@ -199,73 +235,90 @@
     }
 
     .cta-wrap {
-      margin-top: 34px;
+      margin-top: 38px;
+
       display: flex;
-      align-items: center;
       justify-content: center;
     }
 
     .cta {
-      position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
-      min-width: 288px;
-      padding: 17px 30px;
+
+      min-width: 300px;
+
+      padding: 18px 34px;
+
       border-radius: 999px;
+
       border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.06));
-      color: #ffffff;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.16),
+          rgba(255,255,255,0.05)
+        );
+
+      color: white;
+
       text-decoration: none;
+
       font-size: 20px;
       font-weight: 600;
+
       letter-spacing: 0.01em;
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.16),
-        0 18px 50px rgba(0,0,0,0.42),
-        0 0 48px rgba(214, 98, 255, 0.20);
+
       backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.14),
+        0 20px 60px rgba(0,0,0,0.42),
+        0 0 60px rgba(214,98,255,0.16);
+
+      transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        background 0.28s ease;
     }
 
     .cta:hover {
-      transform: translateY(-2px) scale(1.025);
-      border-color: rgba(255,255,255,0.34);
-      background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.08));
+      transform: translateY(-2px) scale(1.03);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.22),
+          rgba(255,255,255,0.08)
+        );
+
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.22),
-        0 22px 62px rgba(0,0,0,0.50),
-        0 0 64px rgba(214, 98, 255, 0.28);
+        inset 0 1px 0 rgba(255,255,255,0.18),
+        0 24px 70px rgba(0,0,0,0.52),
+        0 0 80px rgba(214,98,255,0.26);
     }
 
     .cta svg {
       width: 21px;
       height: 21px;
-      flex: 0 0 auto;
+      flex-shrink: 0;
     }
 
     .micro {
-      margin-top: 16px;
+      margin-top: 18px;
+
       font-size: 12px;
-      font-weight: 400;
+
       letter-spacing: 0.10em;
+
       text-transform: uppercase;
-      color: rgba(255,255,255,0.58);
+
+      color: rgba(255,255,255,0.52);
     }
 
-    @keyframes videoBreath {
-      from {
-        transform: scale(1.04);
-      }
-
-      to {
-        transform: scale(1.075);
-      }
-    }
-
-    @keyframes fadeUp {
+    @keyframes fadeIn {
       from {
         opacity: 0;
         transform: translateY(18px);
@@ -277,105 +330,93 @@
       }
     }
 
-    @keyframes driftOne {
+    @keyframes videoMove {
+      from {
+        transform: scale(1.05);
+      }
+
+      to {
+        transform: scale(1.09);
+      }
+    }
+
+    @keyframes particlesMove {
       from {
         transform: translateY(0);
       }
 
       to {
-        transform: translateY(-26px);
+        transform: translateY(-30px);
       }
     }
 
-    @keyframes driftTwo {
+    @keyframes particlesMoveReverse {
       from {
         transform: translateY(0);
       }
 
       to {
-        transform: translateY(22px);
-      }
-    }
-
-    @keyframes shimmer {
-      0%, 100% {
-        opacity: 0.30;
-      }
-
-      50% {
-        opacity: 0.55;
+        transform: translateY(24px);
       }
     }
 
     @media (max-width: 680px) {
-      .content {
-        padding: 18px 14px 28px;
-      }
-
-      .eyebrow {
-        font-size: 10px;
-        letter-spacing: 0.34em;
-        margin-bottom: 12px;
-      }
-
       h1 {
-        font-size: clamp(58px, 21vw, 108px);
-        line-height: 0.9;
+        font-size: clamp(58px, 22vw, 110px);
       }
 
       .subline {
-        margin-top: 22px;
-        font-size: 18px;
-        line-height: 1.5;
         max-width: 320px;
-      }
 
-      .cta-wrap {
-        margin-top: 28px;
-      }
-
-      .cta {
-        min-width: 252px;
-        padding: 16px 24px;
         font-size: 18px;
+
+        line-height: 1.5;
       }
 
-      .micro {
-        margin-top: 14px;
-        font-size: 11px;
-        letter-spacing: 0.08em;
-      }
-    }
-
-    @media (max-width: 430px) {
       .cta {
-        min-width: 236px;
-        font-size: 17px;
+        min-width: 250px;
+
+        padding: 16px 24px;
+
+        font-size: 18px;
       }
     }
   </style>
 </head>
 
 <body>
-  <video class="bg-video" autoplay muted loop playsinline poster="Nova-final-01.jpg">
+
+  <video
+    class="bg-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    poster="Nova-final-01.jpg"
+  >
     <source src="Story-3er.mp4" type="video/mp4" />
   </video>
 
-  <div class="video-overlay"></div>
-  <div class="grain"></div>
+  <div class="overlay"></div>
+
   <div class="particles"></div>
 
   <main class="content">
-    <p class="eyebrow">Nova</p>
+
+    <div class="eyebrow">
+      Nova
+    </div>
 
     <h1>
-      coming
-      <span class="soon">soon</span>
+      enter
+      <span class="nova">nova</span>
     </h1>
 
     <p class="subline">
-      This is not random.
-      <span class="break">You were meant to find this.</span>
+      A story about the moment
+      <span class="break">
+        you remember who you are.
+      </span>
     </p>
 
     <div class="cta-wrap">
@@ -386,6 +427,7 @@
         rel="noopener noreferrer"
         aria-label="Enter Nova on Instagram"
       >
+
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2" stroke="currentColor" stroke-width="2"></rect>
           <circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="2"></circle>
@@ -393,10 +435,15 @@
         </svg>
 
         <span>Enter Nova</span>
+
       </a>
     </div>
 
-    <div class="micro">Only a few will understand.</div>
+    <div class="micro">
+      Only a few will understand.
+    </div>
+
   </main>
+
 </body>
 </html>
