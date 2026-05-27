@@ -4,24 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Nova | You were not supposed to find this</title>
+  <title>Nova | A cinematic story about mindset, identity and self-discovery</title>
 
-  <meta name="description" content="Nova is a cinematic Instagram story about mindset, identity, inner strength and self-discovery. You were not supposed to find this. But now the story has found you." />
-  <meta name="keywords" content="Nova, You Are Nova, mindset, self-discovery, identity, inner strength, cinematic story, Instagram story, psychological storytelling, Nova Instagram, inner world, SuperNova, Gary" />
+  <meta name="description" content="Nova is a cinematic Instagram story about mindset, identity, inner strength and self-discovery. Enter the world of Nova." />
+  <meta name="keywords" content="Nova, You Are Nova, mindset, self-discovery, identity, inner strength, cinematic story, Instagram story, psychological storytelling, Nova Instagram" />
   <meta name="author" content="Nova" />
   <meta name="robots" content="index, follow" />
 
   <link rel="canonical" href="https://youarenova.ai/" />
 
-  <meta property="og:title" content="Nova | You were not supposed to find this." />
-  <meta property="og:description" content="But now the story has found you. Enter Nova." />
+  <meta property="og:title" content="Nova | You were meant to find this." />
+  <meta property="og:description" content="A cinematic story about mindset, identity, inner strength and self-discovery." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://youarenova.ai/" />
   <meta property="og:image" content="https://youarenova.ai/Nova-final-01.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Nova | You were not supposed to find this." />
-  <meta name="twitter:description" content="But now the story has found you. Enter Nova." />
+  <meta name="twitter:title" content="Nova | You were meant to find this." />
+  <meta name="twitter:description" content="A cinematic story about mindset, identity, inner strength and self-discovery." />
   <meta name="twitter:image" content="https://youarenova.ai/Nova-final-01.jpg" />
 
   <script type="application/ld+json">
@@ -39,16 +39,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root {
       --bg: #05020a;
       --text: #ffffff;
-      --muted: rgba(255,255,255,0.82);
       --line: rgba(255,255,255,0.18);
-      --shadow: rgba(0,0,0,0.45);
     }
 
     * {
@@ -72,69 +69,40 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255, 0, 128, 0.08), transparent 28%),
-        radial-gradient(circle at 80% 15%, rgba(120, 0, 255, 0.10), transparent 30%),
-        radial-gradient(circle at 50% 80%, rgba(255, 0, 90, 0.10), transparent 35%),
-        #05020a;
+      background: #05020a;
     }
 
-    .bg-image {
+    .bg-video {
       position: absolute;
       inset: 0;
-
-      background-image:
-        linear-gradient(to bottom, rgba(0,0,0,0.30), rgba(0,0,0,0.48)),
-        url("Nova-final-01.jpg");
-
-      background-size: cover;
-      background-position: center 22%;
-
-      transform: scale(1.035);
-
-      filter:
-        saturate(1.04)
-        contrast(1.10)
-        brightness(0.78);
-
-      animation: slowFloat 14s ease-in-out infinite alternate;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1.04);
+      filter: saturate(1.08) contrast(1.12) brightness(0.62);
+      animation: videoBreath 14s ease-in-out infinite alternate;
     }
 
-    .bg-image::after {
-      content: "";
+    .video-overlay {
       position: absolute;
       inset: 0;
-
       background:
-        radial-gradient(circle at 50% 48%, rgba(255, 60, 170, 0.18), transparent 24%),
-        radial-gradient(circle at 52% 40%, rgba(155, 92, 255, 0.14), transparent 28%),
-        linear-gradient(to right, rgba(255, 0, 140, 0.08), transparent 35%, transparent 65%, rgba(120, 0, 255, 0.10));
-
-      mix-blend-mode: screen;
-      opacity: 0.92;
+        linear-gradient(to bottom, rgba(0,0,0,0.34), rgba(0,0,0,0.56)),
+        radial-gradient(circle at 50% 46%, rgba(255, 60, 170, 0.18), transparent 30%),
+        radial-gradient(circle at 52% 40%, rgba(155, 92, 255, 0.16), transparent 34%),
+        radial-gradient(circle at center, transparent 32%, rgba(0,0,0,0.52) 100%);
       pointer-events: none;
-    }
-
-    .vignette {
-      position: absolute;
-      inset: 0;
-
-      background:
-        radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.24) 62%, rgba(0,0,0,0.66) 100%);
-
-      pointer-events: none;
+      z-index: 2;
     }
 
     .grain {
       position: absolute;
       inset: 0;
+      z-index: 3;
       pointer-events: none;
-      opacity: 0.08;
-
-      background-image:
-        radial-gradient(rgba(255,255,255,0.8) 0.45px, transparent 0.55px);
-
+      opacity: 0.075;
+      background-image: radial-gradient(rgba(255,255,255,0.8) 0.45px, transparent 0.55px);
       background-size: 6px 6px;
       mix-blend-mode: soft-light;
     }
@@ -146,116 +114,84 @@
       inset: 0;
       content: "";
       pointer-events: none;
+      z-index: 4;
     }
 
     .particles {
       background:
-        radial-gradient(circle, rgba(255, 128, 210, 0.22) 0 1.2px, transparent 1.8px),
-        radial-gradient(circle, rgba(180, 110, 255, 0.20) 0 1.1px, transparent 1.7px),
-        radial-gradient(circle, rgba(255, 255, 255, 0.10) 0 1px, transparent 1.5px);
-
+        radial-gradient(circle, rgba(255, 128, 210, 0.18) 0 1.2px, transparent 1.8px),
+        radial-gradient(circle, rgba(180, 110, 255, 0.16) 0 1.1px, transparent 1.7px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.08) 0 1px, transparent 1.5px);
       background-size: 210px 210px, 270px 270px, 180px 180px;
       background-position: 0 0, 60px 40px, 110px 80px;
-
       animation: driftOne 18s linear infinite;
-      opacity: 0.8;
+      opacity: 0.7;
     }
 
     .particles::before {
       background:
-        radial-gradient(circle, rgba(255, 70, 170, 0.16) 0 1.2px, transparent 1.9px),
-        radial-gradient(circle, rgba(155, 92, 255, 0.16) 0 1.1px, transparent 1.8px);
-
+        radial-gradient(circle, rgba(255, 70, 170, 0.14) 0 1.2px, transparent 1.9px),
+        radial-gradient(circle, rgba(155, 92, 255, 0.14) 0 1.1px, transparent 1.8px);
       background-size: 320px 320px, 260px 260px;
       background-position: 20px 30px, 140px 120px;
-
       animation: driftTwo 24s linear infinite reverse;
-      opacity: 0.7;
+      opacity: 0.65;
     }
 
     .particles::after {
       background:
-        radial-gradient(circle, rgba(255,255,255,0.10) 0 0.9px, transparent 1.4px);
-
+        radial-gradient(circle, rgba(255,255,255,0.08) 0 0.9px, transparent 1.4px);
       background-size: 240px 240px;
       background-position: 90px 140px;
-
       animation: shimmer 8s ease-in-out infinite;
-      opacity: 0.45;
+      opacity: 0.4;
     }
 
     .content {
       position: relative;
-      z-index: 5;
-
+      z-index: 10;
       width: min(92vw, 880px);
-
       padding: 24px 18px;
-
       text-align: center;
-
       animation: fadeUp 1.2s ease both;
     }
 
     .eyebrow {
       margin: 0 0 14px;
-
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.42em;
-
       text-transform: uppercase;
-
       color: rgba(255,255,255,0.9);
     }
 
     h1 {
       margin: 0;
-
       font-size: clamp(72px, 14vw, 158px);
-
       line-height: 0.88;
-
       letter-spacing: -0.06em;
-
       font-weight: 800;
-
       text-transform: lowercase;
-
       color: #ffffff;
     }
 
     h1 .soon {
       display: block;
-
       margin-top: 8px;
-
-      background: linear-gradient(
-        180deg,
-        #ffd6fa 0%,
-        #ebb2ff 35%,
-        #d791ff 72%,
-        #bf76ff 100%
-      );
-
+      background: linear-gradient(180deg, #ffd6fa 0%, #ebb2ff 35%, #d791ff 72%, #bf76ff 100%);
       -webkit-background-clip: text;
       background-clip: text;
-
       color: transparent;
     }
 
     .subline {
       margin: 28px auto 0;
-
-      max-width: 560px;
-
+      max-width: 480px;
       font-size: clamp(17px, 2.1vw, 24px);
-
       line-height: 1.45;
-
       font-weight: 400;
-
-      color: rgba(255,255,255,0.88);
+      color: rgba(255,255,255,0.9);
+      text-shadow: 0 8px 24px rgba(0,0,0,0.45);
     }
 
     .subline .break {
@@ -264,7 +200,6 @@
 
     .cta-wrap {
       margin-top: 34px;
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -272,66 +207,37 @@
 
     .cta {
       position: relative;
-
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
-
       min-width: 288px;
-
       padding: 17px 30px;
-
       border-radius: 999px;
-
       border: 1px solid var(--line);
-
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255,255,255,0.10),
-          rgba(255,255,255,0.04)
-        );
-
+      background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.06));
       color: #ffffff;
-
       text-decoration: none;
-
       font-size: 20px;
       font-weight: 600;
-
       letter-spacing: 0.01em;
-
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.14),
-        0 12px 36px rgba(0,0,0,0.28),
-        0 0 40px rgba(214, 98, 255, 0.10);
-
-      backdrop-filter: blur(12px);
-
-      transition:
-        transform 0.28s ease,
-        box-shadow 0.28s ease,
-        border-color 0.28s ease,
-        background 0.28s ease;
+        inset 0 1px 0 rgba(255,255,255,0.16),
+        0 18px 50px rgba(0,0,0,0.42),
+        0 0 48px rgba(214, 98, 255, 0.20);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease;
     }
 
     .cta:hover {
-      transform: translateY(-2px) scale(1.02);
-
-      border-color: rgba(255,255,255,0.28);
-
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255,255,255,0.14),
-          rgba(255,255,255,0.06)
-        );
-
+      transform: translateY(-2px) scale(1.025);
+      border-color: rgba(255,255,255,0.34);
+      background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.08));
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.18),
-        0 16px 42px rgba(0,0,0,0.34),
-        0 0 54px rgba(214, 98, 255, 0.16);
+        inset 0 1px 0 rgba(255,255,255,0.22),
+        0 22px 62px rgba(0,0,0,0.50),
+        0 0 64px rgba(214, 98, 255, 0.28);
     }
 
     .cta svg {
@@ -342,24 +248,20 @@
 
     .micro {
       margin-top: 16px;
-
       font-size: 12px;
       font-weight: 400;
-
       letter-spacing: 0.10em;
-
       text-transform: uppercase;
-
-      color: rgba(255,255,255,0.54);
+      color: rgba(255,255,255,0.58);
     }
 
-    @keyframes slowFloat {
+    @keyframes videoBreath {
       from {
-        transform: scale(1.035) translate3d(0, 0, 0);
+        transform: scale(1.04);
       }
 
       to {
-        transform: scale(1.06) translate3d(0, -8px, 0);
+        transform: scale(1.075);
       }
     }
 
@@ -405,24 +307,9 @@
       }
     }
 
-    @media (max-width: 980px) {
-      .bg-image {
-        background-position: center 18%;
-      }
-
-      .subline {
-        max-width: 460px;
-      }
-    }
-
     @media (max-width: 680px) {
       .content {
         padding: 18px 14px 28px;
-      }
-
-      .bg-image {
-        background-position: center 14%;
-        transform: scale(1.08);
       }
 
       .eyebrow {
@@ -440,7 +327,7 @@
         margin-top: 22px;
         font-size: 18px;
         line-height: 1.5;
-        max-width: 340px;
+        max-width: 320px;
       }
 
       .cta-wrap {
@@ -461,10 +348,6 @@
     }
 
     @media (max-width: 430px) {
-      .bg-image {
-        background-position: center 12%;
-      }
-
       .cta {
         min-width: 236px;
         font-size: 17px;
@@ -474,8 +357,11 @@
 </head>
 
 <body>
-  <div class="bg-image"></div>
-  <div class="vignette"></div>
+  <video class="bg-video" autoplay muted loop playsinline poster="Nova-final-01.jpg">
+    <source src="Story-3er.mp4" type="video/mp4" />
+  </video>
+
+  <div class="video-overlay"></div>
   <div class="grain"></div>
   <div class="particles"></div>
 
@@ -483,15 +369,13 @@
     <p class="eyebrow">Nova</p>
 
     <h1>
-      enter
-      <span class="soon">nova</span>
+      coming
+      <span class="soon">soon</span>
     </h1>
 
     <p class="subline">
-      You were not supposed to find this.
-      <span class="break">
-        But now the story has found you.
-      </span>
+      This is not random.
+      <span class="break">You were meant to find this.</span>
     </p>
 
     <div class="cta-wrap">
@@ -500,7 +384,7 @@
         href="https://www.instagram.com/you.are.nova/"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Follow Nova on Instagram"
+        aria-label="Enter Nova on Instagram"
       >
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2" stroke="currentColor" stroke-width="2"></rect>
@@ -508,13 +392,11 @@
           <circle cx="17.6" cy="6.4" r="1.2" fill="currentColor"></circle>
         </svg>
 
-        <span>Follow Nova</span>
+        <span>Enter Nova</span>
       </a>
     </div>
 
-    <div class="micro">
-      Follow before it disappears.
-    </div>
+    <div class="micro">Only a few will understand.</div>
   </main>
 </body>
 </html>
