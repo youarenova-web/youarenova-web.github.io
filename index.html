@@ -14,7 +14,7 @@
   <link rel="canonical" href="https://youarenova.ai/" />
 
   <meta property="og:title" content="Nova | Welcher Anteil führt dich gerade?" />
-  <meta property="og:description" content="Mach den Test und entdecke, ob gerade Nova, SuperNova oder Gary in dir spricht." />
+  <meta property="og:description" content="Mach den Mindtrip-Test und entdecke, ob gerade Nova, SuperNova oder Gary in dir spricht." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://youarenova.ai/" />
   <meta property="og:image" content="https://youarenova.ai/profile-tro.jpg" />
@@ -143,8 +143,6 @@
 
     main {
       flex: 1;
-      display: grid;
-      place-items: center;
       padding: 48px 0 80px;
     }
 
@@ -153,6 +151,10 @@
       max-width: 760px;
       text-align: center;
       margin: 0 auto;
+      min-height: calc(100vh - 190px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .profile {
@@ -227,6 +229,9 @@
       text-transform: uppercase;
       text-decoration: none;
       transition: 0.25s ease;
+      cursor: pointer;
+      border: 0;
+      font-family: inherit;
     }
 
     .button.primary {
@@ -278,8 +283,136 @@
       color: var(--muted);
     }
 
+    .mindtrip {
+      max-width: 820px;
+      margin: 40px auto 0;
+      padding: 42px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 32px;
+      background: rgba(255,255,255,0.055);
+      backdrop-filter: blur(22px);
+      text-align: left;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.28);
+    }
+
+    .mindtrip-intro {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .mindtrip-kicker {
+      margin-bottom: 14px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.62);
+    }
+
+    .mindtrip h2 {
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 0.98;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      text-wrap: balance;
+    }
+
+    .mindtrip-intro p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: rgba(244,244,245,0.68);
+      line-height: 1.55;
+      font-size: 17px;
+    }
+
+    .question {
+      padding: 26px 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .question h3 {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .question label {
+      display: block;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 17px;
+      background: rgba(255,255,255,0.035);
+      color: rgba(244,244,245,0.82);
+      cursor: pointer;
+      transition: 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .question label:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(255,255,255,0.22);
+    }
+
+    .question input {
+      margin-right: 10px;
+      accent-color: var(--violet);
+    }
+
+    .quiz-submit {
+      display: flex;
+      justify-content: center;
+      padding-top: 12px;
+    }
+
+    .result {
+      margin-top: 38px;
+      padding: 36px;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(142,61,255,0.25), transparent 38%),
+        radial-gradient(circle at 85% 18%, rgba(255,79,216,0.14), transparent 35%),
+        rgba(255,255,255,0.06);
+      text-align: center;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.3);
+    }
+
+    .result-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 16px;
+    }
+
+    #resultTitle {
+      font-size: clamp(34px, 6vw, 62px);
+      line-height: 0.95;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    #resultText,
+    #resultStep {
+      max-width: 620px;
+      margin: 0 auto 20px;
+      color: rgba(244,244,245,0.76);
+      line-height: 1.65;
+      font-size: 17px;
+    }
+
+    .result .button {
+      margin-top: 10px;
+    }
+
     footer {
-      padding: 28px 0;
+      padding: 36px 0;
       text-align: center;
       font-size: 12px;
       letter-spacing: 0.16em;
@@ -309,6 +442,11 @@
         padding: 34px 0 58px;
       }
 
+      .hero {
+        min-height: auto;
+        padding: 54px 0 44px;
+      }
+
       .profile {
         width: 146px;
         height: 146px;
@@ -325,6 +463,24 @@
 
       .card {
         padding: 18px 16px;
+      }
+
+      .mindtrip {
+        padding: 28px 20px;
+        border-radius: 26px;
+        margin-top: 20px;
+      }
+
+      .mindtrip h2 {
+        letter-spacing: 0.05em;
+      }
+
+      .question {
+        padding: 22px 0;
+      }
+
+      .result {
+        padding: 28px 20px;
       }
     }
 
@@ -349,6 +505,10 @@
 
       .button {
         width: 100%;
+      }
+
+      .mindtrip-kicker {
+        letter-spacing: 0.22em;
       }
     }
   </style>
@@ -377,12 +537,12 @@
         </p>
 
         <div class="cta-row">
-          <a class="button primary" href="https://www.instagram.com/you.are.nova/" target="_blank" rel="noopener noreferrer">
-            Entdecke Nova
+          <a class="button primary" href="#mindtrip">
+            Test starten
           </a>
 
-          <a class="button secondary" href="#figuren">
-            Die drei Anteile
+          <a class="button secondary" href="https://www.instagram.com/you.are.nova/" target="_blank" rel="noopener noreferrer">
+            Instagram
           </a>
         </div>
 
@@ -403,11 +563,227 @@
           </div>
         </div>
       </section>
+
+      <section class="mindtrip" id="mindtrip" aria-label="Nova Mindtrip Test">
+        <div class="mindtrip-intro">
+          <div class="mindtrip-kicker">Mindtrip-Test</div>
+
+          <h2>Welcher Anteil spricht gerade in dir?</h2>
+
+          <p>
+            Beantworte 7 Fragen. Nova zeigt dir, welcher Teil in dir gerade führt:
+            deine Ruhe, deine Kraft oder der Druck von außen.
+          </p>
+        </div>
+
+        <form id="novaQuiz">
+          <div class="question">
+            <h3>1. Wie fühlst du dich gerade?</h3>
+            <label><input type="radio" name="q1" value="nova" required> Ruhig, aber nachdenklich.</label>
+            <label><input type="radio" name="q1" value="supernova"> Innerlich geladen.</label>
+            <label><input type="radio" name="q1" value="gary"> Müde vom Funktionieren.</label>
+          </div>
+
+          <div class="question">
+            <h3>2. Was bestimmt gerade deinen Alltag?</h3>
+            <label><input type="radio" name="q2" value="gary" required> Druck, Erwartungen und To-dos.</label>
+            <label><input type="radio" name="q2" value="nova"> Der Wunsch nach Klarheit.</label>
+            <label><input type="radio" name="q2" value="supernova"> Der Wunsch auszubrechen.</label>
+          </div>
+
+          <div class="question">
+            <h3>3. Was brauchst du gerade am meisten?</h3>
+            <label><input type="radio" name="q3" value="nova" required> Ruhe.</label>
+            <label><input type="radio" name="q3" value="supernova"> Mut.</label>
+            <label><input type="radio" name="q3" value="gary"> Sicherheit.</label>
+          </div>
+
+          <div class="question">
+            <h3>4. Was hält dich zurück?</h3>
+            <label><input type="radio" name="q4" value="gary" required> Angst, nicht zu genügen.</label>
+            <label><input type="radio" name="q4" value="nova"> Zu viele Gedanken.</label>
+            <label><input type="radio" name="q4" value="supernova"> Zu viel unterdrückte Energie.</label>
+          </div>
+
+          <div class="question">
+            <h3>5. Wie reagierst du auf Druck?</h3>
+            <label><input type="radio" name="q5" value="gary" required> Ich passe mich an.</label>
+            <label><input type="radio" name="q5" value="nova"> Ich ziehe mich zurück.</label>
+            <label><input type="radio" name="q5" value="supernova"> Ich werde innerlich wild.</label>
+          </div>
+
+          <div class="question">
+            <h3>6. Was wäre heute ehrlich?</h3>
+            <label><input type="radio" name="q6" value="nova" required> Mich selbst wieder hören.</label>
+            <label><input type="radio" name="q6" value="supernova"> Nicht mehr klein bleiben.</label>
+            <label><input type="radio" name="q6" value="gary"> Erstmal durchhalten.</label>
+          </div>
+
+          <div class="question">
+            <h3>7. Welcher Satz trifft dich am meisten?</h3>
+            <label><input type="radio" name="q7" value="gary" required> Ich funktioniere mehr, als ich lebe.</label>
+            <label><input type="radio" name="q7" value="nova"> Ich will wieder bei mir ankommen.</label>
+            <label><input type="radio" name="q7" value="supernova"> Da ist etwas in mir, das raus will.</label>
+          </div>
+
+          <div class="quiz-submit">
+            <button type="submit" class="button primary">Ergebnis zeigen</button>
+          </div>
+        </form>
+
+        <div id="result" class="result" hidden>
+          <p class="result-label">Dein aktueller Anteil</p>
+          <h2 id="resultTitle"></h2>
+          <p id="resultText"></p>
+          <p id="resultStep"></p>
+
+          <a href="https://www.instagram.com/you.are.nova/" target="_blank" rel="noopener noreferrer" class="button secondary">
+            Weiter zu Nova
+          </a>
+        </div>
+      </section>
     </main>
 
     <footer>
       © Nova · Mindset · Selbstfindung · Identität
     </footer>
   </div>
+
+  <script>
+    const quiz = document.getElementById("novaQuiz");
+    const result = document.getElementById("result");
+    const resultTitle = document.getElementById("resultTitle");
+    const resultText = document.getElementById("resultText");
+    const resultStep = document.getElementById("resultStep");
+
+    const texts = {
+      nova: [
+        "Nova ist in dir wach. Nicht laut. Nicht perfekt. Aber ehrlich. Du spürst, dass du nicht noch mehr funktionieren willst. Du willst wieder näher zu dir selbst.",
+        "Gerade führt Nova in dir. Das bedeutet nicht, dass alles ruhig ist. Es bedeutet, dass ein Teil von dir endlich wieder zuhört.",
+        "Nova steht für Klarheit. Für den Moment, in dem du merkst: Ich muss nicht härter werden. Ich muss ehrlicher werden."
+      ],
+      supernova: [
+        "SuperNova ist wach. Da ist Kraft in dir, die zu lange zurückgehalten wurde. Nicht alles daran ist kontrollierbar. Aber genau darin liegt deine Wahrheit.",
+        "Gerade brennt etwas in dir. SuperNova will nicht mehr angepasst sein. Sie will raus aus der Enge.",
+        "SuperNova zeigt sich, wenn du zu lange klein geblieben bist. Sie ist nicht brav. Sie ist der Teil, der endlich Raum fordert."
+      ],
+      gary: [
+        "Gary spricht gerade sehr laut in dir. Er steht für Druck, Angst und Anpassung. Für den Teil, der dich klein hält, obwohl du längst mehr bist.",
+        "Gerade wirkt es so, als würdest du mehr funktionieren als fühlen. Gary hält dich beschäftigt. Aber nicht unbedingt lebendig.",
+        "Gary ist nicht dein Feind. Er ist der alte Schutzmechanismus. Aber vielleicht ist es Zeit, ihm nicht mehr die Führung zu geben."
+      ],
+      mixedNovaGary: [
+        "Nova ist da. Aber Gary sitzt noch daneben. Du willst Ruhe, aber der Druck lässt dich nicht ganz los. Das ist kein Scheitern. Das ist der Übergang.",
+        "Ein Teil von dir will klar sehen. Ein anderer Teil will nur sicher durchkommen. Nova und Gary kämpfen gerade um deine Aufmerksamkeit."
+      ],
+      mixedNovaSupernova: [
+        "Nova und SuperNova sind beide in dir aktiv. Du suchst Ruhe, aber da ist auch eine Kraft, die nicht mehr warten will.",
+        "Du bist zwischen Klarheit und Ausbruch. Nova will verstehen. SuperNova will handeln. Beides gehört zu dir."
+      ],
+      mixedSupernovaGary: [
+        "In dir treffen Druck und Ausbruch aufeinander. Gary hält dich fest. SuperNova will raus. Genau deshalb fühlt sich gerade vieles so eng an.",
+        "Du funktionierst noch, aber innerlich brodelt es. Gary kontrolliert. SuperNova rebelliert. Das ist ein starker innerer Konflikt."
+      ]
+    };
+
+    const steps = {
+      nova: [
+        "Dein nächster Schritt: Nimm dir heute einen Moment, in dem du nichts beweisen musst.",
+        "Dein Impuls: Hör auf die leise Stimme. Sie ist oft ehrlicher als der Lärm."
+      ],
+      supernova: [
+        "Dein nächster Schritt: Nutze deine Kraft, aber verbrenne dich nicht daran.",
+        "Dein Impuls: Du musst nicht explodieren, um frei zu sein."
+      ],
+      gary: [
+        "Dein nächster Schritt: Frag dich, welche Erwartung heute wirklich zu dir gehört.",
+        "Dein Impuls: Nicht jeder Druck ist deine Wahrheit."
+      ],
+      mixed: [
+        "Dein nächster Schritt: Entscheide heute nicht aus Angst. Entscheide aus Ehrlichkeit.",
+        "Dein Impuls: Du musst dich nicht sofort lösen. Aber du darfst anfangen, dich selbst wieder ernst zu nehmen."
+      ]
+    };
+
+    function randomFrom(array) {
+      return array[Math.floor(Math.random() * array.length)];
+    }
+
+    quiz.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(quiz);
+      const score = {
+        nova: 0,
+        supernova: 0,
+        gary: 0
+      };
+
+      for (const value of formData.values()) {
+        score[value]++;
+      }
+
+      const sorted = Object.entries(score).sort((a, b) => b[1] - a[1]);
+      const first = sorted[0];
+      const second = sorted[1];
+
+      let type = first[0];
+      let title = "";
+      let text = "";
+      let step = "";
+
+      if (first[1] === second[1]) {
+        if (
+          (first[0] === "nova" && second[0] === "gary") ||
+          (first[0] === "gary" && second[0] === "nova")
+        ) {
+          title = "Nova mit Gary-Schatten";
+          text = randomFrom(texts.mixedNovaGary);
+        }
+
+        else if (
+          (first[0] === "nova" && second[0] === "supernova") ||
+          (first[0] === "supernova" && second[0] === "nova")
+        ) {
+          title = "Nova mit SuperNova-Kraft";
+          text = randomFrom(texts.mixedNovaSupernova);
+        }
+
+        else {
+          title = "SuperNova gegen Gary";
+          text = randomFrom(texts.mixedSupernovaGary);
+        }
+
+        step = randomFrom(steps.mixed);
+      }
+
+      else {
+        if (type === "nova") {
+          title = "Nova";
+          text = randomFrom(texts.nova);
+          step = randomFrom(steps.nova);
+        }
+
+        if (type === "supernova") {
+          title = "SuperNova";
+          text = randomFrom(texts.supernova);
+          step = randomFrom(steps.supernova);
+        }
+
+        if (type === "gary") {
+          title = "Gary";
+          text = randomFrom(texts.gary);
+          step = randomFrom(steps.gary);
+        }
+      }
+
+      resultTitle.textContent = title;
+      resultText.textContent = text;
+      resultStep.textContent = step;
+
+      result.hidden = false;
+      result.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  </script>
 </body>
 </html>
