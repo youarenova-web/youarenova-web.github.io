@@ -362,6 +362,9 @@
     }
 
     .birth-field {
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
       margin-top: 12px;
       padding: 22px;
       border: 1px solid rgba(255,255,255,0.12);
@@ -387,6 +390,8 @@
 
     .birth-field input {
       width: 100%;
+      max-width: 100%;
+      min-width: 0;
       min-height: 52px;
       padding: 0 16px;
       border-radius: 16px;
@@ -395,6 +400,17 @@
       color: var(--text);
       font: inherit;
       color-scheme: dark;
+      display: block;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .birth-field input::-webkit-date-and-time-value {
+      text-align: left;
+    }
+
+    .birth-field input::-webkit-calendar-picker-indicator {
+      max-width: 22px;
     }
 
     .birth-field input:focus {
@@ -564,6 +580,14 @@
         padding: 22px 0;
       }
 
+      .birth-field {
+        padding: 18px 14px;
+      }
+
+      .birth-field input {
+        font-size: 16px;
+      }
+
       .result {
         padding: 28px 20px;
       }
@@ -599,6 +623,10 @@
 
       .mindtrip-kicker {
         letter-spacing: 0.22em;
+      }
+
+      .birth-field {
+        padding: 16px 12px;
       }
     }
   </style>
