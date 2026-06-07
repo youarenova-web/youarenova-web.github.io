@@ -7,7 +7,7 @@
   <title>Nova | Mindtrip zu dir selbst</title>
 
   <meta name="description" content="Nova ist eine visuelle Story über Identität, innere Stärke, Angst, Erwachen und Selbstfindung. Finde heraus, welcher Anteil gerade in dir spricht: Nova, Supernova oder Gary." />
-  <meta name="keywords" content="Nova, You Are Nova, Mindtrip, Selbstfindung, Identität, innere Reise, Mindset, Storytelling, Gary, Supernova" />
+  <meta name="keywords" content="Nova, You Are Nova, Mindtrip, Selbstfindung, Identität, innere Reise, Mindset, Storytelling, Supernova, Gary" />
   <meta name="author" content="Nova" />
   <meta name="robots" content="index, follow" />
 
@@ -17,7 +17,7 @@
   <meta property="og:description" content="Mach den Test und entdecke, ob gerade Nova, Supernova oder Gary in dir spricht." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://youarenova.ai/" />
-  <meta property="og:image" content="https://youarenova.ai/profile-trio.jpg" />
+  <meta property="og:image" content="https://youarenova.ai/profile-tro.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -44,7 +44,6 @@
       --muted: rgba(255,255,255,0.62);
       --line: rgba(255,255,255,0.14);
       --soft: rgba(255,255,255,0.07);
-      --soft-strong: rgba(255,255,255,0.12);
       --violet: #8e3dff;
     }
 
@@ -80,6 +79,20 @@
       background: #030304;
     }
 
+    .hero-image-fallback {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: url("Nova-final-01.jpg");
+      background-size: cover;
+      background-position: center center;
+      transform: scale(1.05);
+      filter:
+        brightness(0.42)
+        contrast(1.14)
+        saturate(0.92);
+    }
+
     .bg-video {
       position: absolute;
       inset: 0;
@@ -91,9 +104,9 @@
       pointer-events: none;
       transform: scale(1.05);
       filter:
-        brightness(0.42)
-        contrast(1.14)
-        saturate(0.92);
+        brightness(0.56)
+        contrast(1.12)
+        saturate(0.96);
       animation: videoMove 18s ease-in-out infinite alternate;
     }
 
@@ -103,8 +116,8 @@
       z-index: 2;
       pointer-events: none;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.82)),
-        radial-gradient(circle at 50% 42%, rgba(142,61,255,0.12), transparent 34%),
+        linear-gradient(to bottom, rgba(0,0,0,0.30), rgba(0,0,0,0.82)),
+        radial-gradient(circle at 50% 42%, rgba(142,61,255,0.10), transparent 34%),
         radial-gradient(circle at center, transparent 22%, rgba(0,0,0,0.78) 100%);
     }
 
@@ -135,7 +148,7 @@
       border-radius: 50%;
       object-fit: cover;
       object-position: center;
-      border: 1px solid rgba(255,255,255,0.20);
+      border: 1px solid rgba(255,255,255,0.22);
       box-shadow:
         0 20px 70px rgba(0,0,0,0.58),
         0 0 44px rgba(142,61,255,0.16);
@@ -579,6 +592,8 @@
 <body>
 
   <section class="hero">
+    <div class="hero-image-fallback"></div>
+
     <video
       class="bg-video"
       autoplay
@@ -596,7 +611,7 @@
     <div class="grain"></div>
 
     <main class="hero-content">
-      <img class="hero-avatar" src="profile-trio.jpg" alt="Nova, Supernova und Gary" onerror="this.style.display='none';" />
+      <img class="hero-avatar" src="profile-tro.jpg" alt="Nova, Supernova und Gary" />
 
       <div class="eyebrow">You Are Nova</div>
 
