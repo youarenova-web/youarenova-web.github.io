@@ -6,7 +6,7 @@
 
   <title>Nova | Mindtrip zu dir selbst</title>
 
-  <meta name="description" content="Nova ist eine visuelle Story über Identität, innere Stärke, Angst, Erwachen und Selbstfindung. Finde heraus, welcher Anteil gerade in dir spricht: Nova, Gary oder Supernova." />
+  <meta name="description" content="Nova ist eine visuelle Story über Identität, innere Stärke, Angst, Erwachen und Selbstfindung. Finde heraus, welcher Anteil gerade in dir spricht: Nova, Supernova oder Gary." />
   <meta name="keywords" content="Nova, You Are Nova, Mindtrip, Selbstfindung, Identität, innere Reise, Mindset, Storytelling, Gary, Supernova" />
   <meta name="author" content="Nova" />
   <meta name="robots" content="index, follow" />
@@ -14,10 +14,10 @@
   <link rel="canonical" href="https://youarenova.ai/" />
 
   <meta property="og:title" content="Nova | Welcher Anteil führt dich gerade?" />
-  <meta property="og:description" content="Mach den Test und entdecke, ob gerade Nova, Gary oder Supernova in dir spricht." />
+  <meta property="og:description" content="Mach den Test und entdecke, ob gerade Nova, Supernova oder Gary in dir spricht." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://youarenova.ai/" />
-  <meta property="og:image" content="https://youarenova.ai/Nova-final-01.jpg" />
+  <meta property="og:image" content="https://youarenova.ai/profile-trio.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -40,14 +40,12 @@
   <style>
     :root {
       --bg: #050507;
-      --text: #f3f3f3;
-      --muted: rgba(255,255,255,0.64);
-      --soft: rgba(255,255,255,0.07);
-      --soft-strong: rgba(255,255,255,0.11);
+      --text: #f4f4f4;
+      --muted: rgba(255,255,255,0.62);
       --line: rgba(255,255,255,0.14);
-      --dark: rgba(0,0,0,0.62);
+      --soft: rgba(255,255,255,0.07);
+      --soft-strong: rgba(255,255,255,0.12);
       --violet: #8e3dff;
-      --pink: #c04cff;
     }
 
     * {
@@ -77,7 +75,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 74px 20px;
+      padding: 72px 20px;
       overflow: hidden;
       background: #030304;
     }
@@ -93,8 +91,8 @@
       pointer-events: none;
       transform: scale(1.05);
       filter:
-        brightness(0.40)
-        contrast(1.16)
+        brightness(0.42)
+        contrast(1.14)
         saturate(0.92);
       animation: videoMove 18s ease-in-out infinite alternate;
     }
@@ -106,7 +104,7 @@
       pointer-events: none;
       background:
         linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.82)),
-        radial-gradient(circle at 50% 40%, rgba(142,61,255,0.12), transparent 34%),
+        radial-gradient(circle at 50% 42%, rgba(142,61,255,0.12), transparent 34%),
         radial-gradient(circle at center, transparent 22%, rgba(0,0,0,0.78) 100%);
     }
 
@@ -115,7 +113,7 @@
       inset: 0;
       z-index: 3;
       pointer-events: none;
-      opacity: 0.15;
+      opacity: 0.14;
       background-image:
         radial-gradient(circle, rgba(255,255,255,0.14) 0 1px, transparent 1px);
       background-size: 120px 120px;
@@ -125,28 +123,41 @@
     .hero-content {
       position: relative;
       z-index: 10;
-      width: min(92vw, 860px);
+      width: min(92vw, 900px);
       text-align: center;
       animation: fadeIn 1.2s ease;
+    }
+
+    .hero-avatar {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 1px solid rgba(255,255,255,0.20);
+      box-shadow:
+        0 20px 70px rgba(0,0,0,0.58),
+        0 0 44px rgba(142,61,255,0.16);
+      background: rgba(255,255,255,0.05);
     }
 
     .eyebrow {
       margin-bottom: 22px;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.42em;
+      letter-spacing: 0.44em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.58);
+      color: rgba(255,255,255,0.56);
     }
 
     h1 {
-      max-width: 820px;
+      max-width: 920px;
       margin: 0 auto;
-      font-size: clamp(48px, 10.5vw, 126px);
-      line-height: 0.92;
+      font-size: clamp(46px, 9.4vw, 118px);
+      line-height: 1.02;
       font-weight: 900;
-      letter-spacing: -0.075em;
-      text-transform: none;
+      letter-spacing: -0.025em;
       color: #ffffff;
       text-shadow:
         0 26px 70px rgba(0,0,0,0.70),
@@ -158,18 +169,21 @@
     }
 
     .subline {
-      margin: 30px auto 0;
-      max-width: 560px;
-      font-size: clamp(17px, 2.2vw, 22px);
-      line-height: 1.5;
+      margin: 28px auto 0;
+      max-width: 580px;
+      font-size: clamp(17px, 2.1vw, 22px);
+      line-height: 1.55;
       font-weight: 400;
       color: rgba(255,255,255,0.78);
       text-shadow: 0 16px 42px rgba(0,0,0,0.66);
     }
 
     .subline strong {
-      font-weight: 700;
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 800;
       color: #ffffff;
+      letter-spacing: 0.02em;
     }
 
     .cta-wrap {
@@ -281,11 +295,11 @@
     }
 
     .quiz-title {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto;
-      font-size: clamp(38px, 7.2vw, 78px);
-      line-height: 0.96;
-      letter-spacing: -0.07em;
+      font-size: clamp(38px, 7vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -0.025em;
       font-weight: 900;
       color: #ffffff;
     }
@@ -325,9 +339,9 @@
     .quiz-box h2,
     .result-box h2 {
       margin-bottom: 28px;
-      font-size: clamp(27px, 5.1vw, 46px);
-      line-height: 1.08;
-      letter-spacing: -0.055em;
+      font-size: clamp(27px, 5vw, 46px);
+      line-height: 1.14;
+      letter-spacing: -0.02em;
       font-weight: 900;
       color: #ffffff;
     }
@@ -469,14 +483,21 @@
         padding: 58px 16px;
       }
 
+      .hero-avatar {
+        width: 78px;
+        height: 78px;
+        margin-bottom: 22px;
+      }
+
       .eyebrow {
         font-size: 10px;
         letter-spacing: 0.36em;
       }
 
       h1 {
-        font-size: clamp(48px, 17vw, 88px);
-        line-height: 0.96;
+        font-size: clamp(44px, 15vw, 82px);
+        line-height: 1.04;
+        letter-spacing: -0.018em;
       }
 
       .subline {
@@ -504,7 +525,8 @@
       }
 
       .quiz-title {
-        font-size: clamp(38px, 12vw, 64px);
+        font-size: clamp(38px, 11vw, 62px);
+        letter-spacing: -0.018em;
       }
 
       .quiz-intro {
@@ -574,6 +596,8 @@
     <div class="grain"></div>
 
     <main class="hero-content">
+      <img class="hero-avatar" src="profile-trio.jpg" alt="Nova, Supernova und Gary" onerror="this.style.display='none';" />
+
       <div class="eyebrow">You Are Nova</div>
 
       <h1>
@@ -582,8 +606,8 @@
       </h1>
 
       <p class="subline">
-        <strong>Nova. Gary. Supernova.</strong><br>
-        Ein kurzer Mindtrip zu dir selbst.
+        <strong>Nova. Supernova. Gary.</strong>
+        Ein Mindtrip zu dir selbst.
       </p>
 
       <div class="cta-wrap">
@@ -618,7 +642,7 @@
       <h2 class="quiz-title">Wer spricht gerade in dir?</h2>
 
       <p class="quiz-intro">
-        Beantworte 5 Fragen und entdecke, ob gerade Nova, Gary oder Supernova in dir führt.
+        Beantworte 5 Fragen und entdecke, ob gerade Nova, Supernova oder Gary in dir führt.
       </p>
 
       <div id="quizBox" class="quiz-box">
@@ -659,40 +683,40 @@
         text: "Was passiert, wenn Druck auf dich kommt?",
         answers: [
           { text: "Ich funktioniere weiter, obwohl ich innerlich längst müde bin.", type: "nova" },
-          { text: "Ich werde hart zu mir und lasse keine Schwäche zu.", type: "gary" },
-          { text: "Ich spüre, dass ich bald nicht mehr so weitermachen kann.", type: "supernova" }
+          { text: "Ich spüre, dass ich bald nicht mehr so weitermachen kann.", type: "supernova" },
+          { text: "Ich werde hart zu mir und lasse keine Schwäche zu.", type: "gary" }
         ]
       },
       {
         text: "Was versteckst du am meisten?",
         answers: [
           { text: "Dass ich viel mehr fühle, als ich zeige.", type: "nova" },
-          { text: "Dass viele meiner Entscheidungen aus Angst entstehen.", type: "gary" },
-          { text: "Dass in mir etwas ausbrechen will.", type: "supernova" }
+          { text: "Dass in mir etwas ausbrechen will.", type: "supernova" },
+          { text: "Dass viele meiner Entscheidungen aus Angst entstehen.", type: "gary" }
         ]
       },
       {
         text: "Welche Stimme kennst du am besten?",
         answers: [
           { text: "Sei ruhig. Halte durch. Niemand soll es merken.", type: "nova" },
-          { text: "Reiß dich zusammen. Du darfst nicht scheitern.", type: "gary" },
-          { text: "Geh. Jetzt. Sonst verlierst du dich.", type: "supernova" }
+          { text: "Geh. Jetzt. Sonst verlierst du dich.", type: "supernova" },
+          { text: "Reiß dich zusammen. Du darfst nicht scheitern.", type: "gary" }
         ]
       },
       {
         text: "Was macht dir am meisten Angst?",
         answers: [
           { text: "Mich selbst nicht mehr richtig zu spüren.", type: "nova" },
-          { text: "Kontrolle zu verlieren.", type: "gary" },
-          { text: "Zu bleiben, obwohl ich längst gehen müsste.", type: "supernova" }
+          { text: "Zu bleiben, obwohl ich längst gehen müsste.", type: "supernova" },
+          { text: "Kontrolle zu verlieren.", type: "gary" }
         ]
       },
       {
         text: "Was brauchst du gerade wirklich?",
         answers: [
           { text: "Ruhe. Ehrlichkeit. Einen Moment mit mir selbst.", type: "nova" },
-          { text: "Klarheit darüber, welche Angst nicht zu mir gehört.", type: "gary" },
-          { text: "Den Mut, mein altes Leben nicht weiter zu spielen.", type: "supernova" }
+          { text: "Den Mut, mein altes Leben nicht weiter zu spielen.", type: "supernova" },
+          { text: "Klarheit darüber, welche Angst nicht zu mir gehört.", type: "gary" }
         ]
       }
     ];
@@ -704,25 +728,25 @@
         alt: "Nova Portrait",
         text: "Du bist an dem Punkt, an dem du nicht mehr nur funktionieren willst. Nova ist der leise Moment, in dem du beginnst, dich selbst wieder zu hören."
       },
-      gary: {
-        title: "Gary spricht in dir.",
-        image: "quiz-gary.jpg",
-        alt: "Gary Portrait",
-        text: "Fremde Stimmen, Druck und Angst haben sich als dein eigenes Ich verkleidet. Gary zeigt dir, was dich lenkt, obwohl es nie wirklich du warst."
-      },
       supernova: {
         title: "Supernova wächst in dir.",
         image: "quiz-supernova.jpg",
         alt: "Supernova Portrait",
         text: "In dir sammelt sich eine Kraft, die nicht mehr leise bleiben will. Supernova ist der Moment, in dem du nicht mehr zurück in dein altes Leben passt."
+      },
+      gary: {
+        title: "Gary spricht in dir.",
+        image: "quiz-gary.jpg",
+        alt: "Gary Portrait",
+        text: "Fremde Stimmen, Druck und Angst haben sich als dein eigenes Ich verkleidet. Gary zeigt dir, was dich lenkt, obwohl es nie wirklich du warst."
       }
     };
 
     let currentQuestion = 0;
     let scores = {
       nova: 0,
-      gary: 0,
-      supernova: 0
+      supernova: 0,
+      gary: 0
     };
 
     const questionText = document.getElementById("questionText");
@@ -780,8 +804,8 @@
       currentQuestion = 0;
       scores = {
         nova: 0,
-        gary: 0,
-        supernova: 0
+        supernova: 0,
+        gary: 0
       };
 
       resultBox.classList.add("hidden");
