@@ -78,13 +78,14 @@
       background: #030304;
     }
 
-    .hero-bg {
+    .hero-bg-image {
       position: absolute;
       inset: 0;
       z-index: 0;
-      background-image: url("profile-tro.jpg");
-      background-size: cover;
-      background-position: center center;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
       transform: scale(1.12);
       filter:
         brightness(0.38)
@@ -468,9 +469,9 @@
         padding: 58px 16px;
       }
 
-      .hero-bg {
+      .hero-bg-image {
         transform: scale(1.18);
-        background-position: center top;
+        object-position: center top;
         filter:
           brightness(0.32)
           contrast(1.18)
@@ -573,7 +574,7 @@
 <body>
 
   <section class="hero">
-    <div class="hero-bg"></div>
+    <img class="hero-bg-image" src="profile-tro.jpg" alt="" />
 
     <div class="overlay"></div>
     <div class="grain"></div>
