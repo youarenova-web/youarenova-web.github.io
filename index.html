@@ -6,15 +6,15 @@
 
   <title>Nova | Mindtrip zu dir selbst</title>
 
-  <meta name="description" content="Nova ist eine visuelle Story über Identität, innere Stärke, Angst, Erwachen und Selbstfindung. Finde heraus, welcher Anteil gerade in dir spricht: Nova, Supernova oder Gary." />
-  <meta name="keywords" content="Nova, You Are Nova, Mindtrip, Selbstfindung, Identität, innere Reise, Mindset, Storytelling, Supernova, Gary" />
+  <meta name="description" content="Nova ist eine visuelle Story über Identität, innere Stärke, Angst, Erwachen und Selbstfindung. Finde heraus, welcher Anteil gerade in dir spricht: Nova, SuperNova oder Gary." />
+  <meta name="keywords" content="Nova, You Are Nova, Mindtrip, Selbstfindung, Identität, innere Reise, Mindset, Storytelling, SuperNova, Gary" />
   <meta name="author" content="Nova" />
   <meta name="robots" content="index, follow" />
 
   <link rel="canonical" href="https://youarenova.ai/" />
 
   <meta property="og:title" content="Nova | Welcher Anteil führt dich gerade?" />
-  <meta property="og:description" content="Mach den Test und entdecke, ob gerade Nova, Supernova oder Gary in dir spricht." />
+  <meta property="og:description" content="Mach den Test und entdecke, ob gerade Nova, SuperNova oder Gary in dir spricht." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://youarenova.ai/" />
   <meta property="og:image" content="https://youarenova.ai/profile-tro.jpg" />
@@ -39,11 +39,13 @@
 
   <style>
     :root {
-      --bg: #050507;
-      --text: #f4f4f4;
-      --muted: rgba(255,255,255,0.62);
-      --line: rgba(255,255,255,0.14);
+      --bg: #050508;
+      --text: #f4f4f5;
+      --muted: rgba(244, 244, 245, 0.68);
+      --soft: rgba(244, 244, 245, 0.12);
+      --line: rgba(255, 255, 255, 0.14);
       --violet: #8e3dff;
+      --pink: #ff4fd8;
     }
 
     * {
@@ -54,517 +56,298 @@
 
     html {
       scroll-behavior: smooth;
-      background: var(--bg);
     }
 
     body {
-      width: 100%;
-      min-height: 100%;
+      min-height: 100vh;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text);
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
       overflow-x: hidden;
     }
 
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 72px 20px;
-      overflow: hidden;
-      background: #030304;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(5, 5, 8, 0.35),
+          rgba(5, 5, 8, 0.82) 58%,
+          rgba(5, 5, 8, 0.98)
+        ),
+        url("profile-tro.jpg");
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      transform: scale(1.02);
     }
 
-    .hero-bg-image {
-      position: absolute;
+    body::after {
+      content: "";
+      position: fixed;
       inset: 0;
-      z-index: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 50% 12%, rgba(142, 61, 255, 0.22), transparent 32%),
+        radial-gradient(circle at 80% 32%, rgba(255, 79, 216, 0.10), transparent 28%),
+        linear-gradient(to bottom, rgba(5, 5, 8, 0.1), rgba(5, 5, 8, 0.92));
+      pointer-events: none;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0;
+    }
+
+    .logo {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .insta {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      padding: 11px 16px;
+      border-radius: 999px;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.04);
+      transition: 0.25s ease;
+    }
+
+    .insta:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-1px);
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: 48px 0 80px;
+    }
+
+    .hero {
+      width: 100%;
+      max-width: 760px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .profile {
+      width: 178px;
+      height: 178px;
+      margin: 0 auto 34px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      box-shadow:
+        0 0 0 8px rgba(255, 255, 255, 0.045),
+        0 28px 90px rgba(0, 0, 0, 0.58);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .profile img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center center;
-      transform: scale(1.12);
-      filter:
-        brightness(0.38)
-        contrast(1.18)
-        saturate(0.92);
-    }
-
-    .overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      pointer-events: none;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.86)),
-        radial-gradient(circle at 50% 44%, rgba(142,61,255,0.10), transparent 36%),
-        radial-gradient(circle at center, transparent 20%, rgba(0,0,0,0.80) 100%);
-    }
-
-    .grain {
-      position: absolute;
-      inset: 0;
-      z-index: 3;
-      pointer-events: none;
-      opacity: 0.14;
-      background-image:
-        radial-gradient(circle, rgba(255,255,255,0.14) 0 1px, transparent 1px);
-      background-size: 120px 120px;
-      mix-blend-mode: screen;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 10;
-      width: min(92vw, 900px);
-      text-align: center;
-      animation: fadeIn 1.2s ease;
-    }
-
-    .hero-avatar {
-      width: 168px;
-      height: 168px;
-      margin: 0 auto 30px;
-      border-radius: 50%;
-      object-fit: cover;
       object-position: center;
-      border: 1px solid rgba(255,255,255,0.24);
-      box-shadow:
-        0 28px 90px rgba(0,0,0,0.68),
-        0 0 58px rgba(142,61,255,0.20);
-      background: rgba(255,255,255,0.05);
+      display: block;
     }
 
     .eyebrow {
-      margin-bottom: 22px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.44em;
+      margin-bottom: 18px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.42em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.56);
+      color: rgba(255, 255, 255, 0.72);
     }
 
     h1 {
-      max-width: 920px;
-      margin: 0 auto;
-      font-size: clamp(46px, 9.4vw, 118px);
-      line-height: 1.02;
+      font-size: clamp(44px, 8vw, 92px);
+      line-height: 0.92;
       font-weight: 900;
-      letter-spacing: -0.005em;
-      color: #ffffff;
-      text-shadow:
-        0 26px 70px rgba(0,0,0,0.78),
-        0 0 46px rgba(142,61,255,0.10);
-    }
-
-    h1 span {
-      display: block;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+      text-wrap: balance;
     }
 
     .subline {
-      margin: 28px auto 0;
-      max-width: 580px;
-      font-size: clamp(17px, 2.1vw, 22px);
-      line-height: 1.55;
-      font-weight: 400;
-      color: rgba(255,255,255,0.78);
-      text-shadow: 0 16px 42px rgba(0,0,0,0.72);
-    }
-
-    .subline strong {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: 0.04em;
-    }
-
-    .cta-wrap {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .cta,
-    .ghost-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      min-width: 248px;
-      min-height: 56px;
-      padding: 0 28px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      backdrop-filter: blur(18px);
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-    }
-
-    .cta {
-      background: rgba(255,255,255,0.14);
-      color: #ffffff;
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.14),
-        0 26px 72px rgba(0,0,0,0.52),
-        0 0 56px rgba(142,61,255,0.12);
-    }
-
-    .ghost-cta {
-      background: rgba(0,0,0,0.30);
-      color: rgba(255,255,255,0.78);
-    }
-
-    .cta:hover,
-    .ghost-cta:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.19);
-      border-color: rgba(255,255,255,0.26);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.18),
-        0 30px 82px rgba(0,0,0,0.62),
-        0 0 70px rgba(142,61,255,0.18);
-    }
-
-    .ghost-cta svg {
-      width: 19px;
-      height: 19px;
-      flex-shrink: 0;
-    }
-
-    .micro {
-      margin-top: 22px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.38);
-    }
-
-    .quiz-section {
-      position: relative;
-      padding: 94px 20px 116px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 22% 10%, rgba(142,61,255,0.13), transparent 33%),
-        radial-gradient(circle at 84% 22%, rgba(192,76,255,0.07), transparent 32%),
-        linear-gradient(180deg, #050507 0%, #08070b 48%, #030304 100%);
-    }
-
-    .quiz-section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at center, transparent 22%, rgba(0,0,0,0.68) 100%);
-      pointer-events: none;
-    }
-
-    .quiz-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .quiz-kicker,
-    .result-kicker {
-      margin-bottom: 18px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.44);
-    }
-
-    .quiz-title {
-      max-width: 780px;
-      margin: 0 auto;
-      font-size: clamp(38px, 7vw, 76px);
-      line-height: 1.02;
-      letter-spacing: -0.005em;
-      font-weight: 900;
-      color: #ffffff;
-    }
-
-    .quiz-intro {
       max-width: 620px;
-      margin: 24px auto 42px;
-      font-size: 17px;
-      line-height: 1.65;
+      margin: 0 auto 34px;
+      font-size: clamp(17px, 2.2vw, 23px);
+      line-height: 1.5;
       font-weight: 400;
-      color: rgba(255,255,255,0.62);
+      color: var(--muted);
+      text-wrap: balance;
     }
 
-    .quiz-box,
-    .result-box {
-      margin: 0 auto;
-      padding: 30px;
-      border: 1px solid rgba(255,255,255,0.11);
-      border-radius: 28px;
-      background: rgba(255,255,255,0.055);
-      backdrop-filter: blur(22px);
-      box-shadow:
-        0 38px 100px rgba(0,0,0,0.56),
-        inset 0 1px 0 rgba(255,255,255,0.055);
-      text-align: left;
+    .cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 42px;
     }
 
-    .quiz-progress {
-      margin-bottom: 24px;
-      font-size: 11px;
-      font-weight: 700;
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 25px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.40);
-    }
-
-    .quiz-box h2,
-    .result-box h2 {
-      margin-bottom: 28px;
-      font-size: clamp(27px, 5vw, 46px);
-      line-height: 1.14;
-      letter-spacing: 0;
-      font-weight: 900;
-      color: #ffffff;
-    }
-
-    .answers {
-      display: grid;
-      gap: 13px;
-    }
-
-    .answer-button {
-      width: 100%;
-      padding: 19px 20px;
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 18px;
-      background: rgba(255,255,255,0.055);
-      color: rgba(255,255,255,0.84);
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-      font-size: 15.5px;
-      line-height: 1.48;
-      font-weight: 500;
-      text-align: left;
-      cursor: pointer;
-      transition:
-        transform 0.22s ease,
-        background 0.22s ease,
-        border-color 0.22s ease,
-        color 0.22s ease;
-    }
-
-    .answer-button:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.095);
-      border-color: rgba(255,255,255,0.22);
-      color: #ffffff;
-    }
-
-    .result-layout {
-      display: grid;
-      grid-template-columns: 0.86fr 1.14fr;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .result-image {
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      border-radius: 24px;
-      object-fit: cover;
-      object-position: center top;
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow:
-        0 28px 80px rgba(0,0,0,0.62),
-        0 0 42px rgba(142,61,255,0.08);
-      background: rgba(255,255,255,0.04);
-      filter:
-        contrast(1.04)
-        brightness(0.94)
-        saturate(0.94);
-    }
-
-    .result-copy {
-      text-align: left;
-    }
-
-    .result-copy p {
-      margin-bottom: 30px;
-      font-size: 17px;
-      line-height: 1.72;
-      color: rgba(255,255,255,0.66);
-    }
-
-    .result-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .nova-button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 54px;
-      padding: 0 24px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.90);
-      color: #070708;
-      font-size: 14px;
-      font-weight: 900;
       text-decoration: none;
-      box-shadow:
-        0 22px 52px rgba(0,0,0,0.42),
-        0 0 42px rgba(142,61,255,0.14);
+      transition: 0.25s ease;
     }
 
-    .restart-button {
-      min-height: 54px;
-      padding: 0 18px;
-      border: 1px solid rgba(255,255,255,0.11);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.045);
-      color: rgba(255,255,255,0.58);
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    .button.primary {
+      color: #050508;
+      background: #ffffff;
+      box-shadow: 0 18px 55px rgba(255, 255, 255, 0.18);
+    }
+
+    .button.secondary {
+      color: #ffffff;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .characters {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .card {
+      padding: 20px 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.055);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.22);
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .card p {
       font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
+      line-height: 1.45;
+      color: var(--muted);
     }
 
-    .hidden {
-      display: none;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    footer {
+      padding: 28px 0;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
     }
 
     @media (max-width: 760px) {
-      .hero {
-        min-height: 100svh;
-        padding: 58px 16px;
+      .page {
+        width: min(100% - 28px, 1120px);
       }
 
-      .hero-bg-image {
-        transform: scale(1.18);
-        object-position: center top;
-        filter:
-          brightness(0.32)
-          contrast(1.18)
-          saturate(0.92);
+      header {
+        padding: 22px 0;
       }
 
-      .hero-avatar {
-        width: 132px;
-        height: 132px;
-        margin-bottom: 26px;
+      .logo {
+        letter-spacing: 0.28em;
       }
 
-      .eyebrow {
-        font-size: 10px;
-        letter-spacing: 0.36em;
+      .insta {
+        padding: 10px 13px;
+        font-size: 11px;
+      }
+
+      main {
+        padding: 34px 0 58px;
+      }
+
+      .profile {
+        width: 146px;
+        height: 146px;
+        margin-bottom: 28px;
       }
 
       h1 {
-        font-size: clamp(44px, 15vw, 82px);
-        line-height: 1.04;
-        letter-spacing: 0;
+        letter-spacing: 0.075em;
       }
 
-      .subline {
-        max-width: 340px;
-        font-size: 17px;
-        line-height: 1.55;
-      }
-
-      .cta,
-      .ghost-cta {
-        width: 100%;
-        min-width: auto;
-        max-width: 340px;
-        min-height: 54px;
-        padding: 0 22px;
-        font-size: 15px;
-      }
-
-      .micro {
-        font-size: 10px;
-      }
-
-      .quiz-section {
-        padding: 74px 16px 90px;
-      }
-
-      .quiz-title {
-        font-size: clamp(38px, 11vw, 62px);
-        letter-spacing: 0;
-      }
-
-      .quiz-intro {
-        font-size: 16px;
-        line-height: 1.62;
-        margin-bottom: 36px;
-      }
-
-      .quiz-box,
-      .result-box {
-        padding: 22px 18px;
-        border-radius: 24px;
-      }
-
-      .quiz-box h2,
-      .result-box h2 {
-        font-size: 30px;
-      }
-
-      .answer-button {
-        font-size: 15px;
-        padding: 17px;
-      }
-
-      .result-layout {
+      .characters {
         grid-template-columns: 1fr;
-        gap: 24px;
       }
 
-      .result-image {
-        max-height: 520px;
+      .card {
+        padding: 18px 16px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      header {
+        gap: 12px;
       }
 
-      .result-copy {
-        text-align: center;
+      .logo {
+        font-size: 11px;
       }
 
-      .result-actions {
-        justify-content: center;
+      .insta {
+        font-size: 10px;
+        letter-spacing: 0.1em;
       }
 
-      .nova-button,
-      .restart-button {
+      .profile {
+        width: 132px;
+        height: 132px;
+      }
+
+      .button {
         width: 100%;
       }
     }
@@ -572,235 +355,59 @@
 </head>
 
 <body>
+  <div class="page">
+    <header>
+      <a class="logo" href="https://youarenova.ai/" aria-label="Nova Startseite">Nova</a>
+      <a class="insta" href="https://www.instagram.com/you.are.nova/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </header>
 
-  <section class="hero">
-    <img class="hero-bg-image" src="profile-tro.jpg" alt="" />
-
-    <div class="overlay"></div>
-    <div class="grain"></div>
-
-    <main class="hero-content">
-      <img class="hero-avatar" src="profile-tro.jpg" alt="Nova, Supernova und Gary" />
-
-      <div class="eyebrow">You Are Nova</div>
-
-      <h1>
-        Welcher Anteil
-        <span>führt dich?</span>
-      </h1>
-
-      <p class="subline">
-        <strong>Nova. Supernova. Gary.</strong>
-        Ein Mindtrip zu dir selbst.
-      </p>
-
-      <div class="cta-wrap">
-        <a class="cta" href="#test" aria-label="Nova Test starten">
-          <span>Test starten</span>
-        </a>
-
-        <a
-          class="ghost-cta"
-          href="https://www.instagram.com/you.are.nova/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Nova auf Instagram öffnen"
-        >
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2" stroke="currentColor" stroke-width="2"></rect>
-            <circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="2"></circle>
-            <circle cx="17.6" cy="6.4" r="1.2" fill="currentColor"></circle>
-          </svg>
-          <span>Instagram</span>
-        </a>
-      </div>
-
-      <div class="micro">Folge dem, was in dir brennt.</div>
-    </main>
-  </section>
-
-  <section id="test" class="quiz-section">
-    <div class="quiz-inner">
-      <div class="quiz-kicker">Mindtrip zu dir selbst</div>
-
-      <h2 class="quiz-title">Wer spricht gerade in dir?</h2>
-
-      <p class="quiz-intro">
-        Beantworte 5 Fragen und entdecke, ob gerade Nova, Supernova oder Gary in dir führt.
-      </p>
-
-      <div id="quizBox" class="quiz-box">
-        <div class="quiz-progress">
-          <span id="questionCount">Frage 1 von 5</span>
+    <main>
+      <section class="hero" aria-label="Nova Intro">
+        <div class="profile">
+          <img src="profile-tro.jpg" alt="Nova Profilbild" />
         </div>
 
-        <h2 id="questionText"></h2>
+        <div class="eyebrow">You are Nova</div>
 
-        <div id="answers" class="answers"></div>
-      </div>
+        <h1>Ein Mindtrip zu dir selbst.</h1>
 
-      <div id="resultBox" class="result-box hidden">
-        <div class="result-layout">
-          <img id="resultImage" class="result-image" src="" alt="" />
+        <p class="subline">
+          Nova ist eine visuelle Reise über Angst, Kontrolle, innere Stärke und den Moment,
+          in dem du beginnst, dich selbst wieder zu hören.
+        </p>
 
-          <div class="result-copy">
-            <p class="result-kicker">Dein Ergebnis</p>
-            <h2 id="resultTitle"></h2>
-            <p id="resultText"></p>
+        <div class="cta-row">
+          <a class="button primary" href="https://www.instagram.com/you.are.nova/" target="_blank" rel="noopener noreferrer">
+            Entdecke Nova
+          </a>
 
-            <div class="result-actions">
-              <a class="nova-button" href="https://www.instagram.com/you.are.nova/" target="_blank" rel="noopener noreferrer">
-                Folge dem, was in dir brennt.
-              </a>
+          <a class="button secondary" href="#figuren">
+            Die drei Anteile
+          </a>
+        </div>
 
-              <button class="restart-button" onclick="restartQuiz()">Test neu starten</button>
-            </div>
+        <div class="characters" id="figuren">
+          <div class="card">
+            <strong>Nova</strong>
+            <p>Deine innere Ruhe. Der Teil in dir, der wieder klar sehen will.</p>
+          </div>
+
+          <div class="card">
+            <strong>SuperNova</strong>
+            <p>Deine rohe Kraft. Der Moment, in dem du nicht mehr klein bleibst.</p>
+          </div>
+
+          <div class="card">
+            <strong>Gary</strong>
+            <p>Der Druck von außen. Die Stimme, die dich klein, müde und angepasst hält.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
+    </main>
 
-  <script>
-    const questions = [
-      {
-        text: "Was passiert, wenn Druck auf dich kommt?",
-        answers: [
-          { text: "Ich funktioniere weiter, obwohl ich innerlich längst müde bin.", type: "nova" },
-          { text: "Ich spüre, dass ich bald nicht mehr so weitermachen kann.", type: "supernova" },
-          { text: "Ich werde hart zu mir und lasse keine Schwäche zu.", type: "gary" }
-        ]
-      },
-      {
-        text: "Was versteckst du am meisten?",
-        answers: [
-          { text: "Dass ich viel mehr fühle, als ich zeige.", type: "nova" },
-          { text: "Dass in mir etwas ausbrechen will.", type: "supernova" },
-          { text: "Dass viele meiner Entscheidungen aus Angst entstehen.", type: "gary" }
-        ]
-      },
-      {
-        text: "Welche Stimme kennst du am besten?",
-        answers: [
-          { text: "Sei ruhig. Halte durch. Niemand soll es merken.", type: "nova" },
-          { text: "Geh. Jetzt. Sonst verlierst du dich.", type: "supernova" },
-          { text: "Reiß dich zusammen. Du darfst nicht scheitern.", type: "gary" }
-        ]
-      },
-      {
-        text: "Was macht dir am meisten Angst?",
-        answers: [
-          { text: "Mich selbst nicht mehr richtig zu spüren.", type: "nova" },
-          { text: "Zu bleiben, obwohl ich längst gehen müsste.", type: "supernova" },
-          { text: "Kontrolle zu verlieren.", type: "gary" }
-        ]
-      },
-      {
-        text: "Was brauchst du gerade wirklich?",
-        answers: [
-          { text: "Ruhe. Ehrlichkeit. Einen Moment mit mir selbst.", type: "nova" },
-          { text: "Den Mut, mein altes Leben nicht weiter zu spielen.", type: "supernova" },
-          { text: "Klarheit darüber, welche Angst nicht zu mir gehört.", type: "gary" }
-        ]
-      }
-    ];
-
-    const results = {
-      nova: {
-        title: "Nova führt dich.",
-        image: "quiz-nova.jpg",
-        alt: "Nova Portrait",
-        text: "Du bist an dem Punkt, an dem du nicht mehr nur funktionieren willst. Nova ist der leise Moment, in dem du beginnst, dich selbst wieder zu hören."
-      },
-      supernova: {
-        title: "Supernova wächst in dir.",
-        image: "quiz-supernova.jpg",
-        alt: "Supernova Portrait",
-        text: "In dir sammelt sich eine Kraft, die nicht mehr leise bleiben will. Supernova ist der Moment, in dem du nicht mehr zurück in dein altes Leben passt."
-      },
-      gary: {
-        title: "Gary spricht in dir.",
-        image: "quiz-gary.jpg",
-        alt: "Gary Portrait",
-        text: "Fremde Stimmen, Druck und Angst haben sich als dein eigenes Ich verkleidet. Gary zeigt dir, was dich lenkt, obwohl es nie wirklich du warst."
-      }
-    };
-
-    let currentQuestion = 0;
-    let scores = {
-      nova: 0,
-      supernova: 0,
-      gary: 0
-    };
-
-    const questionText = document.getElementById("questionText");
-    const questionCount = document.getElementById("questionCount");
-    const answersBox = document.getElementById("answers");
-    const quizBox = document.getElementById("quizBox");
-    const resultBox = document.getElementById("resultBox");
-    const resultTitle = document.getElementById("resultTitle");
-    const resultText = document.getElementById("resultText");
-    const resultImage = document.getElementById("resultImage");
-
-    function showQuestion() {
-      const question = questions[currentQuestion];
-
-      questionText.textContent = question.text;
-      questionCount.textContent = `Frage ${currentQuestion + 1} von ${questions.length}`;
-      answersBox.innerHTML = "";
-
-      question.answers.forEach(answer => {
-        const button = document.createElement("button");
-        button.className = "answer-button";
-        button.textContent = answer.text;
-        button.onclick = () => selectAnswer(answer.type);
-        answersBox.appendChild(button);
-      });
-    }
-
-    function selectAnswer(type) {
-      scores[type]++;
-      currentQuestion++;
-
-      if (currentQuestion < questions.length) {
-        showQuestion();
-      } else {
-        showResult();
-      }
-    }
-
-    function showResult() {
-      const winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-      const result = results[winner];
-
-      quizBox.classList.add("hidden");
-      resultBox.classList.remove("hidden");
-
-      resultTitle.textContent = result.title;
-      resultText.textContent = result.text;
-      resultImage.src = result.image;
-      resultImage.alt = result.alt;
-
-      resultBox.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-
-    function restartQuiz() {
-      currentQuestion = 0;
-      scores = {
-        nova: 0,
-        supernova: 0,
-        gary: 0
-      };
-
-      resultBox.classList.add("hidden");
-      quizBox.classList.remove("hidden");
-      showQuestion();
-
-      document.getElementById("test").scrollIntoView({ behavior: "smooth" });
-    }
-
-    showQuestion();
-  </script>
-
+    <footer>
+      © Nova · Mindset · Selbstfindung · Identität
+    </footer>
+  </div>
 </body>
 </html>
