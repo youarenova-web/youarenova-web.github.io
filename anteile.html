@@ -362,8 +362,23 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: center center;
       display: block;
+    }
+
+    .part-image img.nova-img {
+      transform: scale(1.18) translateY(-7%);
+      transform-origin: center center;
+    }
+
+    .part-image img.supernova-img {
+      transform: scale(1.18) translateY(-7%);
+      transform-origin: center center;
+    }
+
+    .part-image img.gary-img {
+      transform: scale(1.16) translateY(-6%);
+      transform-origin: center center;
     }
 
     .part-text {
@@ -586,9 +601,27 @@
         border-radius: 26px;
       }
 
+      .part {
+        gap: 20px;
+        margin-bottom: 54px;
+      }
+
       .part-image {
         min-height: 460px;
+        max-height: 520px;
         border-radius: 26px;
+      }
+
+      .part-image img.nova-img {
+        transform: scale(1.28) translateY(-12%);
+      }
+
+      .part-image img.supernova-img {
+        transform: scale(1.26) translateY(-11%);
+      }
+
+      .part-image img.gary-img {
+        transform: scale(1.24) translateY(-10%);
       }
 
       .quote {
@@ -620,7 +653,20 @@
       }
 
       .part-image {
-        min-height: 400px;
+        min-height: 390px;
+        max-height: 460px;
+      }
+
+      .part-image img.nova-img {
+        transform: scale(1.34) translateY(-14%);
+      }
+
+      .part-image img.supernova-img {
+        transform: scale(1.32) translateY(-13%);
+      }
+
+      .part-image img.gary-img {
+        transform: scale(1.30) translateY(-12%);
       }
     }
   </style>
@@ -705,7 +751,7 @@
 
       <section class="part" id="nova" aria-label="Nova Anteil">
         <div class="part-image">
-          <img src="quiz-nova.jpg" alt="Nova" />
+          <img class="nova-img" src="quiz-nova.jpg" alt="Nova" />
         </div>
 
         <div class="part-text">
@@ -751,7 +797,7 @@
 
       <section class="part reverse" id="supernova" aria-label="SuperNova Anteil">
         <div class="part-image">
-          <img src="quiz-supernova.jpg" alt="SuperNova" />
+          <img class="supernova-img" src="quiz-supernova.jpg" alt="SuperNova" />
         </div>
 
         <div class="part-text">
@@ -797,7 +843,7 @@
 
       <section class="part" id="gary" aria-label="Gary Anteil">
         <div class="part-image">
-          <img src="quiz-gary.jpg" alt="Gary" />
+          <img class="gary-img" src="quiz-gary.jpg" alt="Gary" />
         </div>
 
         <div class="part-text">
