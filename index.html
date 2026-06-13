@@ -1348,22 +1348,15 @@
 
       resultImage.className = "";
 
-      if (
-        title === "Nova" ||
-        title === "Nova mit Gary-Schatten"
-      ) {
+      if (profile.imageTitle === "Nova") {
         resultImage.classList.add("result-nova-img");
       }
 
-      if (
-        title === "SuperNova" ||
-        title === "Nova mit SuperNova-Kraft" ||
-        title === "SuperNova gegen Gary"
-      ) {
+      if (profile.imageTitle === "SuperNova") {
         resultImage.classList.add("result-supernova-img");
       }
 
-      if (title === "Gary") {
+      if (profile.imageTitle === "Gary") {
         resultImage.classList.add("result-gary-img");
       }
 
@@ -1380,7 +1373,7 @@
         "Nova " + novaValue + "%\n" +
         "SuperNova " + supernovaValue + "%\n" +
         "Gary " + garyValue + "%\n\n" +
-        "Mein aktueller Anteil: " + title + ".\n\n" +
+        "Mein aktueller Anteil: " + profile.title + ".\n\n" +
         "Welcher Anteil führt dich gerade?\n" +
         "https://youarenova.ai/";
 
