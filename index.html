@@ -361,6 +361,24 @@
       accent-color: var(--violet);
     }
 
+    .question-note {
+      display: block;
+      margin: -6px 0 16px;
+      color: rgba(244,244,245,0.56);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .result-section-title {
+      display: block;
+      margin: 22px auto 8px;
+      color: rgba(255,255,255,0.56);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+    }
+
     .birth-field {
       width: 100%;
       max-width: 100%;
@@ -689,58 +707,85 @@
           <h2>Welcher Anteil spricht gerade in dir?</h2>
 
           <p>
-            Beantworte 7 Fragen. Optional ergänzt dein Geburtszeichen dem Ergebnis eine zweite Farbe.
+            Beantworte 9 Fragen. Nicht perfekt. Nicht logisch. Ehrlich. Optional ergänzt dein Geburtszeichen dem Ergebnis eine zweite Farbe.
           </p>
         </div>
 
         <form id="novaQuiz">
           <div class="question">
-            <h3>1. Wie fühlst du dich gerade?</h3>
-            <label><input type="radio" name="q1" value="nova" required> Ruhig, aber nachdenklich.</label>
-            <label><input type="radio" name="q1" value="supernova"> Innerlich geladen.</label>
-            <label><input type="radio" name="q1" value="gary"> Müde vom Funktionieren.</label>
+            <h3>1. Du wachst auf und hast sofort das Gefühl, etwas stimmt nicht. Was machst du zuerst?</h3>
+            <label><input type="radio" name="q1" required data-nova="2" data-supernova="0" data-gary="1"> Ich bleibe kurz liegen und versuche zu verstehen, was dieses Gefühl mir sagen will.</label>
+            <label><input type="radio" name="q1" data-nova="0" data-supernova="0" data-gary="3"> Ich greife direkt zum Handy, damit ich nicht weiter darüber nachdenken muss.</label>
+            <label><input type="radio" name="q1" data-nova="0" data-supernova="3" data-gary="0"> Ich stehe auf und will sofort raus aus dieser Enge.</label>
+            <label><input type="radio" name="q1" data-nova="0" data-supernova="1" data-gary="2"> Ich funktioniere einfach weiter, obwohl ich innerlich längst weg bin.</label>
           </div>
 
           <div class="question">
-            <h3>2. Was bestimmt gerade deinen Alltag?</h3>
-            <label><input type="radio" name="q2" value="gary" required> Druck, Erwartungen und To-dos.</label>
-            <label><input type="radio" name="q2" value="nova"> Der Wunsch nach Klarheit.</label>
-            <label><input type="radio" name="q2" value="supernova"> Der Wunsch auszubrechen.</label>
+            <h3>2. Du bist mit Menschen zusammen, aber innerlich weit weg. Was passiert in dir?</h3>
+            <label><input type="radio" name="q2" required data-nova="2" data-supernova="0" data-gary="1"> Ich beobachte alles und sage wenig.</label>
+            <label><input type="radio" name="q2" data-nova="0" data-supernova="0" data-gary="3"> Ich spiele meine Rolle, damit niemand etwas merkt.</label>
+            <label><input type="radio" name="q2" data-nova="0" data-supernova="3" data-gary="0"> Ich werde unruhig, weil ich da raus will.</label>
+            <label><input type="radio" name="q2" data-nova="1" data-supernova="0" data-gary="2"> Ich versuche, die Kontrolle über die Situation zu behalten.</label>
           </div>
 
           <div class="question">
-            <h3>3. Was brauchst du gerade am meisten?</h3>
-            <label><input type="radio" name="q3" value="nova" required> Ruhe.</label>
-            <label><input type="radio" name="q3" value="supernova"> Mut.</label>
-            <label><input type="radio" name="q3" value="gary"> Sicherheit.</label>
+            <h3>3. Jemand sagt etwas, das dich trifft. Du zeigst es nicht. Was machst du danach?</h3>
+            <label><input type="radio" name="q3" required data-nova="2" data-supernova="0" data-gary="1"> Ich denke noch lange darüber nach.</label>
+            <label><input type="radio" name="q3" data-nova="0" data-supernova="0" data-gary="3"> Ich tue so, als wäre nichts gewesen.</label>
+            <label><input type="radio" name="q3" data-nova="0" data-supernova="3" data-gary="0"> Ich werde innerlich hart.</label>
+            <label><input type="radio" name="q3" data-nova="1" data-supernova="0" data-gary="2"> Ich suche zuerst den Fehler bei mir.</label>
           </div>
 
           <div class="question">
-            <h3>4. Was hält dich zurück?</h3>
-            <label><input type="radio" name="q4" value="gary" required> Angst, nicht zu genügen.</label>
-            <label><input type="radio" name="q4" value="nova"> Zu viele Gedanken.</label>
-            <label><input type="radio" name="q4" value="supernova"> Zu viel unterdrückte Energie.</label>
+            <h3>4. Was macht dir mehr Angst?</h3>
+            <label><input type="radio" name="q4" required data-nova="0" data-supernova="3" data-gary="1"> Dass du zu viel wirst.</label>
+            <label><input type="radio" name="q4" data-nova="0" data-supernova="0" data-gary="3"> Dass du nicht genug bist.</label>
+            <label><input type="radio" name="q4" data-nova="3" data-supernova="0" data-gary="1"> Dass du dich selbst verlierst.</label>
+            <label><input type="radio" name="q4" data-nova="0" data-supernova="2" data-gary="2"> Dass du irgendwann explodierst.</label>
           </div>
 
           <div class="question">
-            <h3>5. Wie reagierst du auf Druck?</h3>
-            <label><input type="radio" name="q5" value="gary" required> Ich passe mich an.</label>
-            <label><input type="radio" name="q5" value="nova"> Ich ziehe mich zurück.</label>
-            <label><input type="radio" name="q5" value="supernova"> Ich werde innerlich wild.</label>
+            <h3>5. Wenn Druck kommt, was ist dein erster Reflex?</h3>
+            <label><input type="radio" name="q5" required data-nova="0" data-supernova="0" data-gary="3"> Ich passe mich an, bevor es unangenehm wird.</label>
+            <label><input type="radio" name="q5" data-nova="3" data-supernova="0" data-gary="1"> Ich ziehe mich zurück und brauche Abstand.</label>
+            <label><input type="radio" name="q5" data-nova="0" data-supernova="3" data-gary="0"> Ich werde innerlich wild und will dagegenhalten.</label>
+            <label><input type="radio" name="q5" data-nova="1" data-supernova="1" data-gary="2"> Ich mache weiter, aber mein Körper wird schwer.</label>
           </div>
 
           <div class="question">
-            <h3>6. Was wäre heute ehrlich?</h3>
-            <label><input type="radio" name="q6" value="nova" required> Mich selbst wieder hören.</label>
-            <label><input type="radio" name="q6" value="supernova"> Nicht mehr klein bleiben.</label>
-            <label><input type="radio" name="q6" value="gary"> Erstmal durchhalten.</label>
+            <h3>6. Welche Wahrheit würdest du am liebsten nicht anschauen?</h3>
+            <label><input type="radio" name="q6" required data-nova="2" data-supernova="0" data-gary="1"> Dass ich längst weiß, was mir nicht guttut.</label>
+            <label><input type="radio" name="q6" data-nova="1" data-supernova="2" data-gary="0"> Dass ich oft warte, bis es zu spät ist.</label>
+            <label><input type="radio" name="q6" data-nova="0" data-supernova="1" data-gary="3"> Dass ich mich selbst kleiner mache, als ich bin.</label>
+            <label><input type="radio" name="q6" data-nova="3" data-supernova="0" data-gary="1"> Dass meine Ruhe manchmal nur Erstarrung ist.</label>
+          </div>
+
+          <div class="question multi-question" data-max="2">
+            <h3>7. Was davon kennst du zu gut?</h3>
+            <small class="question-note">Wähle 1 bis maximal 2 Antworten.</small>
+            <label><input type="checkbox" name="q7" data-nova="0" data-supernova="0" data-gary="3"> Ich funktioniere, auch wenn ich müde bin.</label>
+            <label><input type="checkbox" name="q7" data-nova="3" data-supernova="0" data-gary="1"> Ich spüre mehr, als ich sagen kann.</label>
+            <label><input type="checkbox" name="q7" data-nova="0" data-supernova="3" data-gary="0"> Ich will ausbrechen, aber halte mich zurück.</label>
+            <label><input type="checkbox" name="q7" data-nova="0" data-supernova="1" data-gary="3"> Ich passe mich an, bevor es Ärger gibt.</label>
+            <label><input type="checkbox" name="q7" data-nova="1" data-supernova="3" data-gary="0"> Ich will endlich nicht mehr klein sein.</label>
+          </div>
+
+          <div class="question multi-question" data-max="2">
+            <h3>8. Welche Sätze treffen dich?</h3>
+            <small class="question-note">Wähle 1 bis maximal 2 Antworten.</small>
+            <label><input type="checkbox" name="q8" data-nova="3" data-supernova="0" data-gary="1"> Ich höre mich selbst oft erst, wenn alles still wird.</label>
+            <label><input type="checkbox" name="q8" data-nova="0" data-supernova="0" data-gary="3"> Ich bin gut darin, nach außen stabil zu wirken.</label>
+            <label><input type="checkbox" name="q8" data-nova="0" data-supernova="3" data-gary="0"> Da ist etwas in mir, das keinen Platz mehr in der alten Version hat.</label>
+            <label><input type="checkbox" name="q8" data-nova="1" data-supernova="0" data-gary="2"> Ich verwechsle Sicherheit manchmal mit Gefangenschaft.</label>
+            <label><input type="checkbox" name="q8" data-nova="1" data-supernova="2" data-gary="0"> Ich will nicht mehr erklären, warum ich anders bin.</label>
           </div>
 
           <div class="question">
-            <h3>7. Welcher Satz trifft dich am meisten?</h3>
-            <label><input type="radio" name="q7" value="gary" required> Ich funktioniere mehr, als ich lebe.</label>
-            <label><input type="radio" name="q7" value="nova"> Ich will wieder bei mir ankommen.</label>
-            <label><input type="radio" name="q7" value="supernova"> Da ist etwas in mir, das raus will.</label>
+            <h3>9. Welcher Satz bleibt am stärksten hängen?</h3>
+            <label><input type="radio" name="q9" required data-nova="3" data-supernova="0" data-gary="0"> Ich muss nicht härter werden. Ich muss ehrlicher werden.</label>
+            <label><input type="radio" name="q9" data-nova="0" data-supernova="3" data-gary="0"> Ich bin nicht zu viel. Ich wurde nur zu lange klein gehalten.</label>
+            <label><input type="radio" name="q9" data-nova="0" data-supernova="0" data-gary="3"> Ich funktioniere mehr, als ich lebe.</label>
+            <label><input type="radio" name="q9" data-nova="1" data-supernova="1" data-gary="1"> Vielleicht beginnt Wahrheit dort, wo ich aufhöre, mich zu belügen.</label>
           </div>
 
           <div class="birth-field">
@@ -793,53 +838,52 @@
     const zodiacBox = document.getElementById("zodiacBox");
     const zodiacText = document.getElementById("zodiacText");
 
-    const texts = {
-      nova: [
-        "Nova ist in dir wach. Nicht laut. Nicht perfekt. Aber ehrlich. Du spürst, dass du nicht noch mehr funktionieren willst. Du willst wieder näher zu dir selbst.",
-        "Gerade führt Nova in dir. Das bedeutet nicht, dass alles ruhig ist. Es bedeutet, dass ein Teil von dir endlich wieder zuhört.",
-        "Nova steht für Klarheit. Für den Moment, in dem du merkst: Ich muss nicht härter werden. Ich muss ehrlicher werden."
-      ],
-      supernova: [
-        "SuperNova ist wach. Da ist Kraft in dir, die zu lange zurückgehalten wurde. Nicht alles daran ist kontrollierbar. Aber genau darin liegt deine Wahrheit.",
-        "Gerade brennt etwas in dir. SuperNova will nicht mehr angepasst sein. Sie will raus aus der Enge.",
-        "SuperNova zeigt sich, wenn du zu lange klein geblieben bist. Sie ist nicht brav. Sie ist der Teil, der endlich Raum fordert."
-      ],
-      gary: [
-        "Gary spricht gerade sehr laut in dir. Er steht für Druck, Angst und Anpassung. Für den Teil, der dich klein hält, obwohl du längst mehr bist.",
-        "Gerade wirkt es so, als würdest du mehr funktionieren als fühlen. Gary hält dich beschäftigt. Aber nicht unbedingt lebendig.",
-        "Gary ist nicht dein Feind. Er ist der alte Schutzmechanismus. Aber vielleicht ist es Zeit, ihm nicht mehr die Führung zu geben."
-      ],
-      mixedNovaGary: [
-        "Nova ist da. Aber Gary sitzt noch daneben. Du willst Ruhe, aber der Druck lässt dich nicht ganz los. Das ist kein Scheitern. Das ist der Übergang.",
-        "Ein Teil von dir will klar sehen. Ein anderer Teil will nur sicher durchkommen. Nova und Gary kämpfen gerade um deine Aufmerksamkeit."
-      ],
-      mixedNovaSupernova: [
-        "Nova und SuperNova sind beide in dir aktiv. Du suchst Ruhe, aber da ist auch eine Kraft, die nicht mehr warten will.",
-        "Du bist zwischen Klarheit und Ausbruch. Nova will verstehen. SuperNova will handeln. Beides gehört zu dir."
-      ],
-      mixedSupernovaGary: [
-        "In dir treffen Druck und Ausbruch aufeinander. Gary hält dich fest. SuperNova will raus. Genau deshalb fühlt sich gerade vieles so eng an.",
-        "Du funktionierst noch, aber innerlich brodelt es. Gary kontrolliert. SuperNova rebelliert. Das ist ein starker innerer Konflikt."
-      ]
+    const profiles = {
+      nova: {
+        title: "Nova",
+        imageTitle: "Nova",
+        meaning: "Nova führt gerade nicht, weil alles ruhig ist. Nova führt, weil ein Teil von dir wieder ehrlich werden will.",
+        mirror: "Du nimmst mehr wahr, als du laut aussprichst. Vielleicht wirkst du kontrolliert. Aber innen sortiert sich gerade etwas neu.",
+        impulse: "Dein nächster Schritt: Nimm dir heute einen Moment, in dem du nichts beweisen musst. Nicht erklären. Nicht performen. Nur hören, was wirklich da ist."
+      },
+      supernova: {
+        title: "SuperNova",
+        imageTitle: "SuperNova",
+        meaning: "SuperNova ist wach, wenn etwas in dir zu lange keinen Raum bekommen hat.",
+        mirror: "Da ist Kraft. Vielleicht Wut. Vielleicht Klarheit. Vielleicht ein Nein, das schon lange in dir wartet.",
+        impulse: "Dein nächster Schritt: Nutze deine Kraft, aber verbrenne dich nicht daran. Du musst nicht explodieren, um frei zu sein."
+      },
+      gary: {
+        title: "Gary",
+        imageTitle: "Gary",
+        meaning: "Gary führt gerade nicht, weil du schwach bist. Er führt, weil du gelernt hast, sicherer zu sein, wenn du dich anpasst.",
+        mirror: "Du funktionierst wahrscheinlich gut. Vielleicht sogar so gut, dass andere gar nicht merken, wie viel Kraft es dich kostet.",
+        impulse: "Dein nächster Schritt: Frag dich, welche Erwartung heute wirklich zu dir gehört. Nicht jeder Druck ist deine Wahrheit."
+      }
     };
 
-    const steps = {
-      nova: [
-        "Dein nächster Schritt: Nimm dir heute einen Moment, in dem du nichts beweisen musst.",
-        "Dein Impuls: Hör auf die leise Stimme. Sie ist oft ehrlicher als der Lärm."
-      ],
-      supernova: [
-        "Dein nächster Schritt: Nutze deine Kraft, aber verbrenne dich nicht daran.",
-        "Dein Impuls: Du musst nicht explodieren, um frei zu sein."
-      ],
-      gary: [
-        "Dein nächster Schritt: Frag dich, welche Erwartung heute wirklich zu dir gehört.",
-        "Dein Impuls: Nicht jeder Druck ist deine Wahrheit."
-      ],
-      mixed: [
-        "Dein nächster Schritt: Entscheide heute nicht aus Angst. Entscheide aus Ehrlichkeit.",
-        "Dein Impuls: Du musst dich nicht sofort lösen. Aber du darfst anfangen, dich selbst wieder ernst zu nehmen."
-      ]
+    const mixedProfiles = {
+      nova_gary: {
+        title: "Nova mit Gary-Schatten",
+        imageTitle: "Nova mit Gary-Schatten",
+        meaning: "Du suchst Klarheit, aber ein Teil von dir traut der Ruhe noch nicht.",
+        mirror: "Du willst dich selbst wieder hören. Gleichzeitig ist da dieser alte Reflex: funktionieren, kontrollieren, bloß nicht zu viel fühlen.",
+        impulse: "Dein nächster Schritt: Nicht sofort lösen. Erst erkennen, wer gerade wirklich spricht: deine Wahrheit oder dein Schutzmechanismus."
+      },
+      nova_supernova: {
+        title: "Nova mit SuperNova-Kraft",
+        imageTitle: "Nova mit SuperNova-Kraft",
+        meaning: "Du bist zwischen Klarheit und Ausbruch. Nova will verstehen. SuperNova will handeln.",
+        mirror: "Du spürst, dass etwas nicht mehr zurück in die alte Form passt. Aber du willst nicht blind zerstören. Du willst echt werden.",
+        impulse: "Dein nächster Schritt: Gib deiner Kraft eine Richtung. Nicht gegen dich. Für dich."
+      },
+      supernova_gary: {
+        title: "SuperNova gegen Gary",
+        imageTitle: "SuperNova gegen Gary",
+        meaning: "In dir treffen Druck und Ausbruch aufeinander. Gary hält dich fest. SuperNova will raus.",
+        mirror: "Nach außen funktionierst du vielleicht noch. Innen ist es enger, lauter, ungeduldiger. Genau dieser Konflikt kostet Kraft.",
+        impulse: "Dein nächster Schritt: Tu heute eine kleine Sache nicht aus Angst. Nur eine. Aber bewusst."
+      }
     };
 
     const resultImages = {
@@ -920,10 +964,6 @@
       }
     };
 
-    function randomFrom(array) {
-      return array[Math.floor(Math.random() * array.length)];
-    }
-
     function getZodiacSign(dateValue) {
       if (!dateValue) return null;
 
@@ -945,84 +985,113 @@
       return "fische";
     }
 
+    function addPoints(score, input) {
+      score.nova += Number(input.dataset.nova || 0);
+      score.supernova += Number(input.dataset.supernova || 0);
+      score.gary += Number(input.dataset.gary || 0);
+    }
+
+    function getMixedKey(first, second) {
+      const pair = [first, second].sort().join("_");
+
+      if (pair === "gary_nova") return "nova_gary";
+      if (pair === "nova_supernova") return "nova_supernova";
+      if (pair === "gary_supernova") return "supernova_gary";
+
+      return null;
+    }
+
+    function buildResultHTML(profile, firstName, secondName, score) {
+      const total = score.nova + score.supernova + score.gary;
+      const firstPercent = total ? Math.round((score[firstName] / total) * 100) : 0;
+      const secondPercent = total ? Math.round((score[secondName] / total) * 100) : 0;
+
+      return `
+        <span class="result-section-title">Was das bedeutet</span>
+        ${profile.meaning}
+
+        <span class="result-section-title">Was du wahrscheinlich kennst</span>
+        ${profile.mirror}
+
+        <span class="result-section-title">Deine innere Mischung</span>
+        ${labelFor(firstName)} führt mit ${firstPercent}%. ${labelFor(secondName)} ist mit ${secondPercent}% als Schattenanteil spürbar.
+      `;
+    }
+
+    function labelFor(type) {
+      if (type === "nova") return "Nova";
+      if (type === "supernova") return "SuperNova";
+      if (type === "gary") return "Gary";
+      return type;
+    }
+
+    document.querySelectorAll(".multi-question").forEach(function(group) {
+      const max = Number(group.dataset.max || 2);
+      const checkboxes = group.querySelectorAll('input[type="checkbox"]');
+
+      checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener("change", function() {
+          const checked = group.querySelectorAll('input[type="checkbox"]:checked');
+
+          if (checked.length > max) {
+            checkbox.checked = false;
+          }
+        });
+      });
+    });
+
     quiz.addEventListener("submit", function(event) {
       event.preventDefault();
 
-      const formData = new FormData(quiz);
+      const multiQuestions = document.querySelectorAll(".multi-question");
+      for (const group of multiQuestions) {
+        const checked = group.querySelectorAll('input[type="checkbox"]:checked');
+
+        if (checked.length < 1) {
+          alert("Bitte wähle bei jeder Mehrfachauswahl mindestens eine Antwort.");
+          group.scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
+
+        if (checked.length > Number(group.dataset.max || 2)) {
+          alert("Bitte wähle bei den Mehrfachauswahlen maximal zwei Antworten.");
+          group.scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
+      }
+
       const score = {
         nova: 0,
         supernova: 0,
         gary: 0
       };
 
-      for (const value of formData.values()) {
-        if (score.hasOwnProperty(value)) {
-          score[value]++;
-        }
-      }
+      quiz.querySelectorAll("input:checked").forEach(function(input) {
+        addPoints(score, input);
+      });
 
       const sorted = Object.entries(score).sort((a, b) => b[1] - a[1]);
       const first = sorted[0];
       const second = sorted[1];
 
-      let type = first[0];
-      let title = "";
-      let text = "";
-      let step = "";
+      const distance = first[1] - second[1];
+      let profile;
 
-      if (first[1] === second[1]) {
-        if (
-          (first[0] === "nova" && second[0] === "gary") ||
-          (first[0] === "gary" && second[0] === "nova")
-        ) {
-          title = "Nova mit Gary-Schatten";
-          text = randomFrom(texts.mixedNovaGary);
-        }
-
-        else if (
-          (first[0] === "nova" && second[0] === "supernova") ||
-          (first[0] === "supernova" && second[0] === "nova")
-        ) {
-          title = "Nova mit SuperNova-Kraft";
-          text = randomFrom(texts.mixedNovaSupernova);
-        }
-
-        else {
-          title = "SuperNova gegen Gary";
-          text = randomFrom(texts.mixedSupernovaGary);
-        }
-
-        step = randomFrom(steps.mixed);
-      }
-
-      else {
-        if (type === "nova") {
-          title = "Nova";
-          text = randomFrom(texts.nova);
-          step = randomFrom(steps.nova);
-        }
-
-        if (type === "supernova") {
-          title = "SuperNova";
-          text = randomFrom(texts.supernova);
-          step = randomFrom(steps.supernova);
-        }
-
-        if (type === "gary") {
-          title = "Gary";
-          text = randomFrom(texts.gary);
-          step = randomFrom(steps.gary);
-        }
+      if (distance <= 3) {
+        const mixedKey = getMixedKey(first[0], second[0]);
+        profile = mixedProfiles[mixedKey] || profiles[first[0]];
+      } else {
+        profile = profiles[first[0]];
       }
 
       const zodiacKey = getZodiacSign(birthdate.value);
 
-      resultTitle.textContent = title;
-      resultText.textContent = text;
-      resultStep.textContent = step;
+      resultTitle.textContent = profile.title;
+      resultText.innerHTML = buildResultHTML(profile, first[0], second[0], score);
+      resultStep.textContent = profile.impulse;
 
-      resultImage.src = resultImages[title].src;
-      resultImage.alt = resultImages[title].alt;
+      resultImage.src = resultImages[profile.imageTitle].src;
+      resultImage.alt = resultImages[profile.imageTitle].alt;
 
       if (zodiacKey && zodiacImpulses[zodiacKey]) {
         zodiacText.textContent = zodiacImpulses[zodiacKey].name + ": " + zodiacImpulses[zodiacKey].text;
