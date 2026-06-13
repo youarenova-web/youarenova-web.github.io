@@ -566,8 +566,102 @@
       display: none;
     }
 
+    .result-distribution {
+      max-width: 620px;
+      margin: 0 auto 26px;
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.045);
+      text-align: left;
+    }
+
+    .distribution-label {
+      margin-bottom: 18px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.58);
+    }
+
+    .bar-row {
+      margin-bottom: 16px;
+    }
+
+    .bar-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .bar-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .bar-head strong {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+    }
+
+    .bar-percent {
+      color: rgba(244,244,245,0.84);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .bar-track {
+      width: 100%;
+      height: 12px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.10);
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 999px;
+      transition: width 0.5s ease;
+    }
+
+    .bar-fill.nova-bar {
+      background: #d0d0d0;
+    }
+
+    .bar-fill.supernova-bar {
+      background: #8e3dff;
+    }
+
+    .bar-fill.gary-bar {
+      background: #7c8a9e;
+    }
+
+    .result-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .copy-status {
+      min-height: 22px;
+      margin-top: 16px;
+      margin-bottom: 0;
+      color: rgba(244,244,245,0.66);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
     .result .button {
-      margin-top: 10px;
+      margin-top: 0;
     }
 
     footer {
@@ -648,6 +742,18 @@
 
       .result {
         padding: 28px 20px;
+      }
+
+      .result-distribution {
+        padding: 18px 16px;
+      }
+
+      .bar-head {
+        font-size: 13px;
+      }
+
+      .result-actions {
+        flex-direction: column;
       }
 
       .result-image {
@@ -861,6 +967,41 @@
 
           <p class="result-label">Dein aktueller Anteil</p>
           <h2 id="resultTitle"></h2>
+
+          <div class="result-distribution" aria-label="Verteilung der Anteile">
+            <div class="distribution-label">Deine aktuelle Verteilung</div>
+
+            <div class="bar-row">
+              <div class="bar-head">
+                <strong>Nova</strong>
+                <span class="bar-percent" id="novaPercent">0%</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill nova-bar" id="novaBar"></div>
+              </div>
+            </div>
+
+            <div class="bar-row">
+              <div class="bar-head">
+                <strong>SuperNova</strong>
+                <span class="bar-percent" id="supernovaPercent">0%</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill supernova-bar" id="supernovaBar"></div>
+              </div>
+            </div>
+
+            <div class="bar-row">
+              <div class="bar-head">
+                <strong>Gary</strong>
+                <span class="bar-percent" id="garyPercent">0%</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill gary-bar" id="garyBar"></div>
+              </div>
+            </div>
+          </div>
+
           <p id="resultText"></p>
 
           <div id="zodiacBox" class="zodiac-box" hidden>
@@ -870,9 +1011,15 @@
 
           <p id="resultStep"></p>
 
-          <a href="https://www.instagram.com/you.are.nova/" target="_blank" rel="noopener noreferrer" class="button secondary">
-            Weiter zu Nova
-          </a>
+          <div class="result-actions">
+            <button type="button" id="copyResultBtn" class="button secondary">Ergebnis kopieren</button>
+
+            <a href="https://www.instagram.com/you.are.nova/" target="_blank" rel="noopener noreferrer" class="button secondary">
+              Zu Instagram
+            </a>
+          </div>
+
+          <p id="copyStatus" class="copy-status" aria-live="polite"></p>
         </div>
       </section>
     </main>
@@ -892,6 +1039,16 @@
     const birthdate = document.getElementById("birthdate");
     const zodiacBox = document.getElementById("zodiacBox");
     const zodiacText = document.getElementById("zodiacText");
+    const novaPercent = document.getElementById("novaPercent");
+    const supernovaPercent = document.getElementById("supernovaPercent");
+    const garyPercent = document.getElementById("garyPercent");
+    const novaBar = document.getElementById("novaBar");
+    const supernovaBar = document.getElementById("supernovaBar");
+    const garyBar = document.getElementById("garyBar");
+    const copyResultBtn = document.getElementById("copyResultBtn");
+    const copyStatus = document.getElementById("copyStatus");
+
+    let latestShareText = "";
 
     const profiles = {
       nova: {
@@ -1019,6 +1176,28 @@
       }
     };
 
+    function percentageValue(value, total) {
+      if (!total) return 0;
+      return Math.round((value / total) * 100);
+    }
+
+    async function copyToClipboard(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+
+      const helper = document.createElement("textarea");
+      helper.value = text;
+      helper.setAttribute("readonly", "");
+      helper.style.position = "absolute";
+      helper.style.left = "-9999px";
+      document.body.appendChild(helper);
+      helper.select();
+      document.execCommand("copy");
+      document.body.removeChild(helper);
+    }
+
     function getZodiacSign(dateValue) {
       if (!dateValue) return null;
 
@@ -1095,6 +1274,20 @@
       });
     });
 
+    copyResultBtn.addEventListener("click", async function() {
+      if (!latestShareText) {
+        copyStatus.textContent = "Mach zuerst den Test, dann kannst du dein Ergebnis kopieren.";
+        return;
+      }
+
+      try {
+        await copyToClipboard(latestShareText);
+        copyStatus.textContent = "Ergebnis kopiert. Du kannst es jetzt bei Instagram einfügen.";
+      } catch (error) {
+        copyStatus.textContent = "Das Kopieren hat gerade nicht geklappt. Bitte versuche es noch einmal.";
+      }
+    });
+
     quiz.addEventListener("submit", function(event) {
       event.preventDefault();
 
@@ -1124,6 +1317,11 @@
       quiz.querySelectorAll("input:checked").forEach(function(input) {
         addPoints(score, input);
       });
+
+      const totalScore = score.nova + score.supernova + score.gary;
+      const novaValue = percentageValue(score.nova, totalScore);
+      const supernovaValue = percentageValue(score.supernova, totalScore);
+      const garyValue = percentageValue(score.gary, totalScore);
 
       const sorted = Object.entries(score).sort((a, b) => b[1] - a[1]);
       const first = sorted[0];
@@ -1168,6 +1366,25 @@
       if (title === "Gary") {
         resultImage.classList.add("result-gary-img");
       }
+
+      novaPercent.textContent = novaValue + "%";
+      supernovaPercent.textContent = supernovaValue + "%";
+      garyPercent.textContent = garyValue + "%";
+
+      novaBar.style.width = novaValue + "%";
+      supernovaBar.style.width = supernovaValue + "%";
+      garyBar.style.width = garyValue + "%";
+
+      latestShareText =
+        "Mein aktueller Nova-State:\n" +
+        "Nova " + novaValue + "%\n" +
+        "SuperNova " + supernovaValue + "%\n" +
+        "Gary " + garyValue + "%\n\n" +
+        "Mein aktueller Anteil: " + title + ".\n\n" +
+        "Welcher Anteil führt dich gerade?\n" +
+        "https://youarenova.ai/";
+
+      copyStatus.textContent = "";
 
       if (zodiacKey && zodiacImpulses[zodiacKey]) {
         zodiacText.textContent = zodiacImpulses[zodiacKey].name + ": " + zodiacImpulses[zodiacKey].text;
