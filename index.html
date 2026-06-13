@@ -282,6 +282,32 @@
       color: var(--muted);
     }
 
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 14px;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      opacity: 0.78;
+      transition: 0.22s ease;
+    }
+
+    .card-link::after {
+      content: "→";
+      margin-left: 8px;
+      font-size: 13px;
+      transform: translateY(-1px);
+    }
+
+    .card-link:hover {
+      opacity: 1;
+      transform: translateX(3px);
+    }
+
     .mindtrip {
       max-width: 820px;
       margin: 40px auto 0;
@@ -686,16 +712,19 @@
           <div class="card">
             <strong>Nova</strong>
             <p>Deine innere Ruhe. Der Teil in dir, der wieder klar sehen will.</p>
+            <a class="card-link" href="anteile.html#nova" aria-label="Mehr über Nova erfahren">Mehr erfahren</a>
           </div>
 
           <div class="card">
             <strong>SuperNova</strong>
             <p>Deine rohe Kraft. Der Moment, in dem du nicht mehr klein bleibst.</p>
+            <a class="card-link" href="anteile.html#supernova" aria-label="Mehr über SuperNova erfahren">Mehr erfahren</a>
           </div>
 
           <div class="card">
             <strong>Gary</strong>
             <p>Der Druck von außen. Die Stimme, die dich klein, müde und angepasst hält.</p>
+            <a class="card-link" href="anteile.html#gary" aria-label="Mehr über Gary erfahren">Mehr erfahren</a>
           </div>
         </div>
       </section>
