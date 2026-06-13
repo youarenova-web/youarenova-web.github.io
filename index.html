@@ -642,6 +642,35 @@
       background: #7c8a9e;
     }
 
+    .share-hint {
+      max-width: 620px;
+      margin: 8px auto 18px;
+      padding: 20px 22px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(142,61,255,0.18), transparent 36%),
+        rgba(255,255,255,0.045);
+      text-align: center;
+    }
+
+    .share-hint strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.70);
+    }
+
+    .share-hint p {
+      margin: 0;
+      color: rgba(244,244,245,0.72);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
     .result-actions {
       display: flex;
       align-items: center;
@@ -745,6 +774,10 @@
       }
 
       .result-distribution {
+        padding: 18px 16px;
+      }
+
+      .share-hint {
         padding: 18px 16px;
       }
 
@@ -1010,6 +1043,11 @@
           </div>
 
           <p id="resultStep"></p>
+
+          <div class="share-hint">
+            <strong>Teile deinen Nova-State</strong>
+            <p>Kopiere dein Ergebnis und füge es unter dem aktuellen Nova-Post als Kommentar ein.</p>
+          </div>
 
           <div class="result-actions">
             <button type="button" id="copyResultBtn" class="button secondary">Ergebnis kopieren</button>
