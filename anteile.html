@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Nova | Die drei Anteile in dir</title>
+
+  <meta name="description" content="Nova, SuperNova und Gary sind innere Anteile in dir: Ruhe, rohe Kraft und äußerer Druck. Eine psychologische und spirituelle Erklärung der Nova-Welt." />
+  <meta name="keywords" content="Nova, SuperNova, Gary, innere Anteile, Selbstfindung, Schattenarbeit, Mindset, Identität, Psychologie, Spiritualität" />
+  <meta name="author" content="Nova" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://youarenova.ai/anteile.html" />
+
+  <meta property="og:title" content="Nova | Die drei Anteile in dir" />
+  <meta property="og:description" content="Nova, SuperNova und Gary sind keine Figuren. Sie sind innere Anteile, die in dir wirken." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://youarenova.ai/anteile.html" />
+  <meta property="og:image" content="https://youarenova.ai/profile-tro.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #050508;
+      --text: #f4f4f5;
+      --muted: rgba(244, 244, 245, 0.70);
+      --soft: rgba(244, 244, 245, 0.48);
+      --line: rgba(255, 255, 255, 0.14);
+      --violet: #8e3dff;
+      --pink: #ff4fd8;
+      --gary: #7c8a9e;
+      --nova: #d0d0d0;
+      --supernova: #8e3dff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(5, 5, 8, 0.32),
+          rgba(5, 5, 8, 0.83) 54%,
+          rgba(5, 5, 8, 0.99)
+        ),
+        url("profile-tro.jpg");
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      transform: scale(1.02);
+      opacity: 0.82;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 50% 9%, rgba(142, 61, 255, 0.20), transparent 34%),
+        radial-gradient(circle at 82% 30%, rgba(255, 79, 216, 0.10), transparent 30%),
+        linear-gradient(to bottom, rgba(5, 5, 8, 0.12), rgba(5, 5, 8, 0.96));
+      pointer-events: none;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 28px 0;
+    }
+
+    .logo {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 999px;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.04);
+      transition: 0.25s ease;
+    }
+
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-1px);
+    }
+
+    main {
+      padding: 42px 0 88px;
+    }
+
+    .hero {
+      max-width: 880px;
+      margin: 0 auto 54px;
+      text-align: center;
+      min-height: calc(100vh - 240px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .kicker {
+      margin-bottom: 18px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 92px);
+      line-height: 0.92;
+      font-weight: 900;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      text-wrap: balance;
+    }
+
+    .subline {
+      max-width: 720px;
+      margin: 0 auto 34px;
+      font-size: clamp(18px, 2.3vw, 24px);
+      line-height: 1.5;
+      color: var(--muted);
+      text-wrap: balance;
+    }
+
+    .truth-line {
+      max-width: 700px;
+      margin: 0 auto 38px;
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.13);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(18px);
+      color: rgba(244,244,245,0.84);
+      font-size: 17px;
+      line-height: 1.62;
+    }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 25px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: 0.25s ease;
+      cursor: pointer;
+      border: 0;
+      font-family: inherit;
+    }
+
+    .button.primary {
+      color: #050508;
+      background: #ffffff;
+      box-shadow: 0 18px 55px rgba(255, 255, 255, 0.18);
+    }
+
+    .button.secondary {
+      color: #ffffff;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .intro {
+      max-width: 880px;
+      margin: 0 auto 58px;
+      padding: 42px;
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.055);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.28);
+    }
+
+    .section-title {
+      font-size: clamp(30px, 5vw, 54px);
+      line-height: 0.98;
+      font-weight: 900;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      text-wrap: balance;
+    }
+
+    .intro p,
+    .deep-section p,
+    .part-text p {
+      color: var(--muted);
+      line-height: 1.78;
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .intro p:last-child,
+    .deep-section p:last-child,
+    .part-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quick-nav {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 920px;
+      margin: 0 auto 58px;
+    }
+
+    .quick-card {
+      display: block;
+      min-height: 150px;
+      padding: 24px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(18px);
+      color: var(--text);
+      text-decoration: none;
+      transition: 0.25s ease;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.085);
+    }
+
+    .quick-card span {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--soft);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    .quick-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 22px;
+      line-height: 1;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .quick-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .part {
+      scroll-margin-top: 40px;
+      max-width: 1020px;
+      margin: 0 auto 68px;
+      display: grid;
+      grid-template-columns: minmax(280px, 420px) 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .part.reverse {
+      grid-template-columns: 1fr minmax(280px, 420px);
+    }
+
+    .part.reverse .part-image {
+      order: 2;
+    }
+
+    .part.reverse .part-text {
+      order: 1;
+    }
+
+    .part-image {
+      overflow: hidden;
+      min-height: 560px;
+      border-radius: 34px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.055);
+      box-shadow:
+        0 30px 90px rgba(0,0,0,0.36),
+        0 0 82px rgba(142,61,255,0.14);
+    }
+
+    .part-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .part-text {
+      padding: 40px;
+      border-radius: 34px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.055);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.26);
+    }
+
+    .part-label {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--soft);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+    }
+
+    .part-text h2 {
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 0.92;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .truth-box {
+      margin: 28px 0;
+      padding: 24px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(142,61,255,0.18), transparent 36%),
+        rgba(255,255,255,0.045);
+    }
+
+    .truth-box strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.62);
+    }
+
+    .truth-box p {
+      color: rgba(244,244,245,0.86);
+      font-size: 19px;
+      line-height: 1.58;
+      margin: 0;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .mini-box {
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .mini-box h3 {
+      margin-bottom: 12px;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .mini-box p {
+      font-size: 15px;
+      line-height: 1.62;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .deep-section {
+      max-width: 920px;
+      margin: 0 auto 58px;
+      padding: 42px;
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.052);
+      backdrop-filter: blur(22px);
+    }
+
+    .quote {
+      max-width: 860px;
+      margin: 0 auto 58px;
+      padding: 46px 34px;
+      border-radius: 32px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.14);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(142,61,255,0.24), transparent 42%),
+        rgba(255,255,255,0.055);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 26px 86px rgba(0,0,0,0.32);
+    }
+
+    .quote p {
+      font-size: clamp(23px, 3.6vw, 42px);
+      line-height: 1.14;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+
+    .final-cta {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 42px;
+      text-align: center;
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,79,216,0.12), transparent 38%),
+        rgba(255,255,255,0.055);
+      backdrop-filter: blur(22px);
+    }
+
+    .final-cta h2 {
+      font-size: clamp(30px, 5vw, 54px);
+      line-height: 0.98;
+      font-weight: 900;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .final-cta p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 18px;
+      margin-bottom: 28px;
+    }
+
+    footer {
+      padding: 36px 0;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    @media (max-width: 920px) {
+      .quick-nav,
+      .part,
+      .part.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .part.reverse .part-image,
+      .part.reverse .part-text {
+        order: unset;
+      }
+
+      .part-image {
+        min-height: 520px;
+      }
+
+      .two-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 28px, 1120px);
+      }
+
+      header {
+        align-items: flex-start;
+        padding: 22px 0;
+      }
+
+      .logo {
+        letter-spacing: 0.28em;
+      }
+
+      nav {
+        gap: 8px;
+      }
+
+      .nav-link {
+        padding: 9px 11px;
+        font-size: 10px;
+      }
+
+      main {
+        padding: 34px 0 58px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 54px 0 44px;
+      }
+
+      h1 {
+        letter-spacing: 0.065em;
+      }
+
+      .intro,
+      .deep-section,
+      .part-text,
+      .final-cta {
+        padding: 28px 20px;
+        border-radius: 26px;
+      }
+
+      .part-image {
+        min-height: 460px;
+        border-radius: 26px;
+      }
+
+      .quote {
+        padding: 34px 22px;
+        border-radius: 26px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .logo {
+        font-size: 11px;
+      }
+
+      .kicker {
+        letter-spacing: 0.25em;
+      }
+
+      .part-image {
+        min-height: 400px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <a class="logo" href="https://youarenova.ai/" aria-label="Nova Startseite">Nova</a>
+
+      <nav aria-label="Navigation">
+        <a class="nav-link" href="https://youarenova.ai/">Test</a>
+        <a class="nav-link" href="#nova">Nova</a>
+        <a class="nav-link" href="#supernova">SuperNova</a>
+        <a class="nav-link" href="#gary">Gary</a>
+        <a class="nav-link" href="https://www.instagram.com/you.are.nova/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Intro">
+        <div class="kicker">Gary · Nova · SuperNova</div>
+
+        <h1>Die drei Anteile in dir.</h1>
+
+        <p class="subline">
+          Nova ist keine Figur. SuperNova ist kein Effekt. Gary ist kein Feind.
+          Sie sind innere Kräfte, die in jedem Menschen wirken.
+        </p>
+
+        <div class="truth-line">
+          Manchmal führt dich deine Ruhe. Manchmal dein Druck.
+          Manchmal eine Kraft, die so lange unterdrückt wurde,
+          bis sie nicht mehr leise bleiben konnte.
+        </div>
+
+        <div class="cta-row">
+          <a class="button primary" href="#nova">Anteile verstehen</a>
+          <a class="button secondary" href="https://youarenova.ai/">Mindtrip-Test starten</a>
+        </div>
+      </section>
+
+      <section class="intro" aria-label="Was sind innere Anteile">
+        <h2 class="section-title">Du bist nicht nur eine Stimme.</h2>
+
+        <p>
+          In dir spricht nicht nur ein Ich. In dir gibt es Anteile. Alte Schutzprogramme.
+          Wünsche, die nie Raum bekommen haben. Ängste, die einmal sinnvoll waren.
+          Kräfte, die zu lange kontrolliert wurden.
+        </p>
+
+        <p>
+          Nova, SuperNova und Gary sind Bilder für diese inneren Bewegungen.
+          Nicht als Diagnose. Nicht als Schublade. Sondern als Spiegel.
+        </p>
+
+        <p>
+          Der Moment, in dem du erkennst, welcher Anteil gerade in dir führt,
+          ist oft der erste Moment, in dem du wieder Wahlfreiheit bekommst.
+        </p>
+      </section>
+
+      <section class="quick-nav" aria-label="Direkt zu den Anteilen">
+        <a class="quick-card" href="#nova">
+          <span>01</span>
+          <strong>Nova</strong>
+          <p>Der innere Anteil, der wieder klar sehen will.</p>
+        </a>
+
+        <a class="quick-card" href="#supernova">
+          <span>02</span>
+          <strong>SuperNova</strong>
+          <p>Die rohe Kraft, die nicht mehr klein bleiben will.</p>
+        </a>
+
+        <a class="quick-card" href="#gary">
+          <span>03</span>
+          <strong>Gary</strong>
+          <p>Der alte Schutz, der Kontrolle mit Sicherheit verwechselt.</p>
+        </a>
+      </section>
+
+      <section class="part" id="nova" aria-label="Nova Anteil">
+        <div class="part-image">
+          <img src="quiz-nova.jpg" alt="Nova" />
+        </div>
+
+        <div class="part-text">
+          <span class="part-label">Anteil 01 · Innere Klarheit</span>
+          <h2>Nova</h2>
+
+          <p>
+            Nova ist der Anteil in dir, der wieder hören will, was wirklich stimmt.
+            Sie ist nicht laut. Nicht perfekt. Nicht unverwundbar. Nova ist die stille
+            Instanz, die merkt: Ich kann nicht ewig gegen mich selbst leben.
+          </p>
+
+          <p>
+            Psychologisch ist Nova der Moment der Selbstwahrnehmung. Der kleine Abstand
+            zwischen Reiz und Reaktion. Der Teil, der nicht sofort flieht, kämpft oder funktioniert,
+            sondern innehält und fragt: Was passiert hier wirklich in mir?
+          </p>
+
+          <div class="truth-box">
+            <strong>Die Wahrheit von Nova</strong>
+            <p>Nova ist nicht perfekte Ruhe. Nova ist Ehrlichkeit ohne Flucht.</p>
+          </div>
+
+          <div class="two-columns">
+            <div class="mini-box">
+              <h3>Psychologisch</h3>
+              <p>
+                Nova steht für Bewusstsein, Selbstkontakt, Klarheit, innere Beobachtung
+                und die Fähigkeit, nicht mehr automatisch zu reagieren.
+              </p>
+            </div>
+
+            <div class="mini-box">
+              <h3>Spirituell</h3>
+              <p>
+                Nova ist der innere Kreis, der wieder in seine Mitte findet.
+                Sie ist das leise Wissen, das unter dem Lärm nie verschwunden ist.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="part reverse" id="supernova" aria-label="SuperNova Anteil">
+        <div class="part-image">
+          <img src="quiz-supernova.jpg" alt="SuperNova" />
+        </div>
+
+        <div class="part-text">
+          <span class="part-label">Anteil 02 · Rohe Kraft</span>
+          <h2>SuperNova</h2>
+
+          <p>
+            SuperNova ist der Anteil in dir, der nicht mehr klein bleiben will.
+            Sie erscheint oft nicht sanft. Sie kommt, wenn zu viel geschluckt,
+            zu viel angepasst und zu viel kontrolliert wurde.
+          </p>
+
+          <p>
+            Psychologisch ist SuperNova verdrängte Energie. Wut, Mut, Grenze, Wahrheit,
+            Entscheidung. Nicht als Drama. Sondern als Lebenskraft, die zu lange keinen
+            Raum hatte und jetzt nicht mehr höflich fragen will.
+          </p>
+
+          <div class="truth-box">
+            <strong>Die Wahrheit von SuperNova</strong>
+            <p>SuperNova zerstört nicht dich. Sie zerstört, was dich zu klein gehalten hat.</p>
+          </div>
+
+          <div class="two-columns">
+            <div class="mini-box">
+              <h3>Psychologisch</h3>
+              <p>
+                SuperNova steht für unterdrückte Kraft, Grenze, Befreiung,
+                Selbstbehauptung und den Moment, in dem Anpassung nicht mehr reicht.
+              </p>
+            </div>
+
+            <div class="mini-box">
+              <h3>Spirituell</h3>
+              <p>
+                SuperNova ist der Bruch in der alten Form. Durch diesen Bruch kommt Energie
+                zurück, die lange nicht mehr fließen durfte.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="part" id="gary" aria-label="Gary Anteil">
+        <div class="part-image">
+          <img src="quiz-gary.jpg" alt="Gary" />
+        </div>
+
+        <div class="part-text">
+          <span class="part-label">Anteil 03 · Alter Schutz</span>
+          <h2>Gary</h2>
+
+          <p>
+            Gary ist der Anteil in dir, der kontrolliert, funktioniert und sich anpasst.
+            Er ist die Stimme, die sagt: Reiß dich zusammen. Mach keinen Ärger.
+            Sei nicht zu viel. Bleib sicher.
+          </p>
+
+          <p>
+            Psychologisch ist Gary ein Schutzmechanismus. Er ist entstanden, weil Anpassung
+            irgendwann sinnvoll war. Vielleicht hat sie dich geschützt. Vielleicht hat sie dir
+            geholfen, durchzukommen. Aber was dich früher geschützt hat, kann dich heute klein halten.
+          </p>
+
+          <div class="truth-box">
+            <strong>Die Wahrheit von Gary</strong>
+            <p>Gary ist nicht dein Feind. Er ist der Teil, der einmal dachte, dich retten zu müssen.</p>
+          </div>
+
+          <div class="two-columns">
+            <div class="mini-box">
+              <h3>Psychologisch</h3>
+              <p>
+                Gary steht für Kontrolle, Druck, Angst, Anpassung, Funktionieren
+                und alte innere Regeln, die längst nicht mehr geprüft wurden.
+              </p>
+            </div>
+
+            <div class="mini-box">
+              <h3>Spirituell</h3>
+              <p>
+                Gary ist die fremde Form, in die du dich gepresst hast, um dazuzugehören.
+                Er zeigt, wo du dich selbst verlassen hast.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deep-section" aria-label="Zusammenspiel">
+        <h2 class="section-title">Keiner dieser Anteile ist falsch.</h2>
+
+        <p>
+          Gary schützt. Nova erkennt. SuperNova befreit. Problematisch wird es erst,
+          wenn einer dieser Anteile allein die Führung übernimmt.
+        </p>
+
+        <p>
+          Wenn Gary allein führt, funktionierst du mehr, als du lebst.
+          Wenn SuperNova allein führt, kann deine Kraft alles verbrennen, auch dich selbst.
+          Wenn Nova führt, entsteht Bewusstsein. Nicht als Kontrolle, sondern als innere Ordnung.
+        </p>
+
+        <p>
+          Die Reise ist nicht, Gary loszuwerden oder SuperNova zu unterdrücken.
+          Die Reise ist, alle Anteile zu erkennen und sie nicht länger unbewusst dein Leben steuern zu lassen.
+        </p>
+      </section>
+
+      <section class="quote" aria-label="Statement">
+        <p>
+          Heilung beginnt nicht dort, wo ein Anteil verschwindet.
+          Sondern dort, wo keiner mehr allein die Kontrolle hat.
+        </p>
+      </section>
+
+      <section class="deep-section" aria-label="Spirituelle Bedeutung">
+        <h2 class="section-title">Spirituell gesehen.</h2>
+
+        <p>
+          Gary ist die äußere Form. Nova ist die innere Mitte.
+          SuperNova ist der Riss, durch den Wahrheit zurückkehrt.
+        </p>
+
+        <p>
+          Deshalb ist Nova keine Geschichte über Optimierung. Es geht nicht darum,
+          besser zu funktionieren. Es geht darum, echter zu werden.
+        </p>
+
+        <p>
+          In jedem Menschen gibt es den Druck der Außenwelt, die leise Wahrheit der Innenwelt
+          und den Moment, in dem etwas Größeres durchbricht.
+        </p>
+      </section>
+
+      <section class="final-cta" aria-label="Call to Action">
+        <h2>Welcher Anteil führt dich gerade?</h2>
+
+        <p>
+          Der Test zeigt dir nicht, wer du bist. Er zeigt dir, welcher Anteil gerade
+          am lautesten in dir spricht.
+        </p>
+
+        <div class="cta-row">
+          <a class="button primary" href="https://youarenova.ai/">Test starten</a>
+          <a class="button secondary" href="https://www.instagram.com/you.are.nova/" target="_blank" rel="noopener noreferrer">Nova auf Instagram</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © Nova · Mindset · Selbstfindung · Identität
+    </footer>
+  </div>
+</body>
+</html>
