@@ -984,7 +984,7 @@
 
           <div class="birth-field">
             <label for="birthdate">Optional: Wann bist du geboren?</label>
-            <small>Nur für einen zusätzlichen Nova-Impuls. Deine Eingabe wird nicht gespeichert.</small>
+            <small>Für deinen persönlichen Geburtsimpuls. Deine Eingabe wird nicht gespeichert.</small>
             <input type="date" id="birthdate" name="birthdate" />
           </div>
 
@@ -1038,7 +1038,7 @@
           <p id="resultText"></p>
 
           <div id="zodiacBox" class="zodiac-box" hidden>
-            <div class="zodiac-label">Dein Geburtszeichen</div>
+            <div class="zodiac-label">Dein Geburtsimpuls</div>
             <p id="zodiacText"></p>
           </div>
 
@@ -1165,52 +1165,40 @@
 
     const zodiacImpulses = {
       widder: {
-        name: "Widder",
-        text: "Als Widder trägst du Feuer in dir. Du willst nicht ewig warten, bis das Leben dir erlaubt, loszugehen. Deine Aufgabe ist nicht, weniger Kraft zu haben. Deine Aufgabe ist, sie bewusst zu führen."
+        text: "In dir liegt ein Anfangsimpuls. Du spürst oft früher als andere, wann etwas losgehen muss. Deine Kraft will nicht ewig warten, bis alles sicher ist. Dein Weg ist nicht, weniger Feuer zu haben. Dein Weg ist, es bewusst zu führen."
       },
       stier: {
-        name: "Stier",
-        text: "Als Stier suchst du Halt, Tiefe und echte Sicherheit. Du brauchst kein lautes Drama, um stark zu sein. Deine Kraft liegt darin, stehen zu bleiben, wenn andere längst wegrennen."
+        text: "In dir liegt die Kraft des Haltens. Du brauchst Tiefe, Echtheit und einen Boden, der nicht bei jedem Windstoß bricht. Deine Stärke ist nicht laut. Sie zeigt sich darin, dass du bleiben kannst, wenn andere längst fliehen."
       },
       zwillinge: {
-        name: "Zwillinge",
-        text: "Als Zwillinge lebt viel Bewegung in dir. Gedanken, Möglichkeiten, Stimmen. Deine innere Reise beginnt dort, wo du nicht jeder Stimme folgen musst, sondern endlich deiner eigenen."
+        text: "In dir bewegt sich viel gleichzeitig. Gedanken, Möglichkeiten, Stimmen, Richtungen. Dein Geburtsimpuls erinnert dich daran: Nicht jede innere Stimme braucht deine Antwort. Die wichtigste ist die, die auch dann bleibt, wenn es still wird."
       },
       krebs: {
-        name: "Krebs",
-        text: "Als Krebs spürst du mehr, als du zeigst. Du nimmst Stimmungen auf, auch wenn du so tust, als wäre alles normal. Nova erinnert dich daran: Deine Sensibilität ist keine Schwäche. Sie ist dein inneres Radar."
+        text: "In dir liegt ein feines inneres Radar. Du spürst Stimmungen, bevor sie ausgesprochen werden. Manchmal trägst du mehr, als sichtbar ist. Deine Sensibilität ist keine Schwäche. Sie ist eine Form von Wahrnehmung, die Führung braucht."
       },
       loewe: {
-        name: "Löwe",
-        text: "Als Löwe trägst du Sichtbarkeit in dir. Aber nicht jede Bühne ist Freiheit. Manchmal beginnt deine Wahrheit erst dort, wo du nicht mehr performst, sondern wirklich fühlst."
+        text: "In dir liegt der Wunsch, sichtbar zu sein, ohne dich dafür zu verlieren. Deine Kraft will strahlen, aber nicht mehr performen. Dein Geburtsimpuls fragt dich: Wo zeigst du dich wirklich? Und wo spielst du nur eine Rolle, um geliebt zu werden?"
       },
       jungfrau: {
-        name: "Jungfrau",
-        text: "Als Jungfrau siehst du Details, die andere übersehen. Du versuchst, Ordnung ins Chaos zu bringen. Doch Nova fragt dich: Muss alles perfekt sein, bevor du dir selbst erlaubst, weich zu werden?"
+        text: "In dir liegt die Gabe, Ordnung im Unsichtbaren zu erkennen. Du bemerkst Details, Muster und kleine Brüche, die andere übergehen. Deine Aufgabe ist nicht, alles perfekt zu machen. Deine Aufgabe ist, auch im Unfertigen bei dir zu bleiben."
       },
       waage: {
-        name: "Waage",
-        text: "Als Waage spürst du Spannungen sofort. Du willst Harmonie, aber manchmal verlierst du dich dabei selbst. Dein Nova-Impuls: Frieden ist nicht echt, wenn du dich dafür verlassen musst."
+        text: "In dir liegt ein tiefes Gespür für Balance. Du merkst sofort, wenn etwas kippt. Doch dein Geburtsimpuls erinnert dich: Frieden ist nicht echt, wenn du dich selbst dafür verlässt. Harmonie beginnt dort, wo du nicht mehr gegen dich entscheidest."
       },
       skorpion: {
-        name: "Skorpion",
-        text: "Als Skorpion kennst du Intensität. Du fühlst selten nur halb. Deine Tiefe ist kein Fehler. Aber sie muss nicht immer Kampf sein. Manchmal ist Wahrheit leise und trotzdem radikal."
+        text: "In dir liegt die Kraft der Tiefe. Du spürst, was unter der Oberfläche arbeitet. Deine Wahrheit ist selten leicht, aber sie ist stark. Dein Weg ist nicht, weniger intensiv zu sein. Dein Weg ist, deiner Tiefe zu vertrauen, ohne darin zu verschwinden."
       },
       schuetze: {
-        name: "Schütze",
-        text: "Als Schütze sucht etwas in dir Weite. Du willst Sinn, Richtung und Freiheit. Doch Freiheit beginnt nicht immer draußen. Manchmal beginnt sie in dem Moment, in dem du ehrlich zu dir selbst wirst."
+        text: "In dir liegt der Ruf nach Weite. Du suchst Sinn, Richtung und ein Leben, das sich nicht zu eng anfühlt. Dein Geburtsimpuls erinnert dich: Freiheit beginnt nicht erst draußen. Sie beginnt in dem Moment, in dem du dir selbst nicht mehr ausweichst."
       },
       steinbock: {
-        name: "Steinbock",
-        text: "Als Steinbock trägst du viel Verantwortung. Du kannst durchhalten, selbst wenn du längst müde bist. Nova erinnert dich: Stärke bedeutet nicht, alles allein tragen zu müssen."
+        text: "In dir liegt eine alte Kraft des Tragens. Du kannst durchhalten, auch wenn du längst müde bist. Doch dein Geburtsimpuls sagt: Stärke bedeutet nicht, alles allein zu schultern. Manchmal beginnt Reife genau dort, wo du nicht mehr hart gegen dich bist."
       },
       wassermann: {
-        name: "Wassermann",
-        text: "Als Wassermann denkst du anders, fühlst anders, siehst anders. Du bist nicht hier, um dich klein in fremde Formen zu pressen. Dein innerer Anteil will nicht angepasst sein. Er will echt sein."
+        text: "In dir liegt eine andere Frequenz. Du denkst nicht nur weiter, du spürst oft auch anders. Dein Geburtsimpuls erinnert dich: Du bist nicht hier, um dich in fremde Formen zu pressen. Deine Echtheit beginnt dort, wo du aufhörst, dich verständlicher zu machen."
       },
       fische: {
-        name: "Fische",
-        text: "Als Fische ist deine Innenwelt groß. Du spürst Dinge, bevor du sie erklären kannst. Nova erinnert dich daran: Deine Träume sind keine Flucht, wenn sie dich näher zu deiner Wahrheit bringen."
+        text: "In dir liegt eine große Innenwelt. Du fühlst Dinge, bevor du sie erklären kannst. Dein Geburtsimpuls erinnert dich: Deine Träume sind keine Flucht, wenn sie dich näher zu deiner Wahrheit bringen. Aber du brauchst eine Mitte, in die du zurückkehren kannst."
       }
     };
 
@@ -1411,14 +1399,20 @@
         "Nova " + novaValue + "%\n" +
         "SuperNova " + supernovaValue + "%\n" +
         "Gary " + garyValue + "%\n\n" +
-        "Mein aktueller Anteil: " + profile.title + ".\n\n" +
-        "Welcher Anteil führt dich gerade?\n" +
+        "Mein aktueller Anteil: " + profile.title + ".";
+
+      if (zodiacKey && zodiacImpulses[zodiacKey]) {
+        latestShareText += "\n\nMein Geburtsimpuls:\n" + zodiacImpulses[zodiacKey].text;
+      }
+
+      latestShareText +=
+        "\n\nWelcher Anteil führt dich gerade?\n" +
         "https://youarenova.ai/";
 
       copyStatus.textContent = "";
 
       if (zodiacKey && zodiacImpulses[zodiacKey]) {
-        zodiacText.textContent = zodiacImpulses[zodiacKey].name + ": " + zodiacImpulses[zodiacKey].text;
+        zodiacText.textContent = zodiacImpulses[zodiacKey].text;
         zodiacBox.hidden = false;
       } else {
         zodiacText.textContent = "";
